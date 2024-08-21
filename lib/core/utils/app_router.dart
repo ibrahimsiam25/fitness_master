@@ -1,9 +1,7 @@
 import 'package:go_router/go_router.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../features/splash/presention/views/splash_view.dart';
 import 'package:fitness_master/features/on_boarding/presention/views/planning_view.dart';
 import 'package:fitness_master/features/on_boarding/presention/views/on_boarding_view.dart';
-import 'package:fitness_master/features/on_boarding/presention/manger/planning/planning_cubit.dart';
 
 abstract class AppRouter {
   static const kOnBoardingView = '/onBoardingView';
@@ -20,10 +18,7 @@ abstract class AppRouter {
       ),
       GoRoute(
         path: kPlanningView,
-        builder: (context, state) => BlocProvider(
-          create: (context) => PlanningCubit(),
-          child: const PlanningView(),
-        ),
+        builder: (context, state) => const PlanningView(),
       ),
     ],
   );
