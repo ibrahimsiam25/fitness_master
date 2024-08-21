@@ -2,8 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:fitness_master/core/constants/const.dart';
 import 'package:fitness_master/core/utils/app_styles.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:fitness_master/core/constants/app_color.dart';
 import 'package:fitness_master/features/on_boarding/presention/views/widgets/custom_row_goal.dart';
-import 'package:fitness_master/features/on_boarding/presention/views/widgets/custom_number_picker.dart';
+import 'package:fitness_master/features/on_boarding/presention/views/widgets/custom_row_for_min_and_day.dart';
 
 class PlanningViewBody extends StatefulWidget {
   const PlanningViewBody({super.key});
@@ -37,24 +38,50 @@ class _PlanningViewBodyState extends State<PlanningViewBody> {
             SizedBox(
               height: 12.h,
             ),
-           const CustomRowGoal(),
-            SizedBox(
-              height: 60.h,
+            const CustomRowGoal(),
+            const Spacer(
+              flex: 1,
             ),
-            Row(children: [
-              SizedBox(
-                width:178.w ,
-                child: Text(
-                  "How many days a week do you plan to exercise?",    
-                  style: AppStyles.body1,
-                  textAlign: TextAlign.start,
+            const CustomRowForMinAndDay(
+              text: "How many days a week do you plan to exercise?",
+              title: "day",
+              currentValue: 3,
+              maxValue: 7,
+              minValue: 1,
+            ),
+            const Spacer(
+              flex: 1,
+            ),
+            const CustomRowForMinAndDay(
+              text: "How much time will you cover exercise?",
+              title: "min",
+              currentValue: 20,
+              maxValue: 200,
+              minValue: 15,
+            ),
+            const Spacer(
+              flex: 1,
+            ),
+            Center(
+              child: MaterialButton(
+                onPressed: () {},
+                color: AppColor.theme,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(13.r),
+                ),
+                child: Padding(
+                  padding: EdgeInsets.symmetric(
+                      horizontal: 28.0.w, vertical: 12.0.h),
+                  child: Text(
+                    "Next",
+                    style: AppStyles.body1.copyWith(color: AppColor.black),
+                  ),
                 ),
               ),
-              SizedBox(width:28.w ,),
-             const CustomNumberPicker(),
-              SizedBox(width:4.w ),
-              Text("day",style: AppStyles.body1,)
-            ])
+            ),
+            const Spacer(
+              flex: 1,
+            ),
           ],
         ),
       ),

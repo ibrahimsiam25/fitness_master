@@ -2,45 +2,67 @@ import 'package:flutter/material.dart';
 import 'package:numberpicker/numberpicker.dart';
 
 class CustomNumberPicker extends StatefulWidget {
-  const CustomNumberPicker({super.key});
+  const CustomNumberPicker({
+    super.key,
+    required this.currentValue,
+    required this.maxValue,
+    required this.minValue,
+  });
+
+  final int currentValue;
+  final int maxValue;
+  final int minValue;
 
   @override
   State<CustomNumberPicker> createState() => _CustomNumberPickerState();
 }
 
 class _CustomNumberPickerState extends State<CustomNumberPicker> {
-   int _currentValue = 3;
+  late int _currentValue;
+
+  @override
+  void initState() {
+    super.initState();
+    _currentValue = widget.currentValue;
+  }
+
   @override
   Widget build(BuildContext context) {
-    return      Stack(
-          alignment: Alignment.center,
-          children: <Widget>[
-            // Black background
-            Positioned(
-              child: Container(
-                decoration: BoxDecoration(
-                  color: Colors.black,
-                  borderRadius: BorderRadius.circular(13.0),
-                ),
-                width: 100,  // Set width to match the NumberPicker
-                height: 60, // Set height to fit the NumberPicker
-              ),
-            ),
-            // NumberPicker
-            Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
-                NumberPicker(
-                  selectedTextStyle:const TextStyle(color: Colors.white, fontSize: 24),
-                  textStyle:const TextStyle(color: Colors.white),
-                  value: _currentValue,
-                  minValue: 0,
-                  maxValue: 100,
-                  onChanged: (value) => setState(() => _currentValue = value),
-                ),
-              ],
-            ),
-          ],
-        );
+    return Stack(
+      alignment: Alignment.center,
+      children: <Widget>[
+        _buildBackground(),
+        _buildNumberPicker(),
+      ],
+    );
+  }
+
+  Widget _buildBackground() {
+    return Positioned(
+      child: Container(
+        decoration: BoxDecoration(
+          color: Colors.black,
+          borderRadius: BorderRadius.circular(13.0),
+        ),
+        width: 100,  
+        height: 60, 
+      ),
+    );
+  }
+
+  Widget _buildNumberPicker() {
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: <Widget>[
+        NumberPicker(
+          selectedTextStyle: const TextStyle(color: Colors.white, fontSize: 24),
+          textStyle: const TextStyle(color: Colors.white),
+          value: _currentValue,
+          minValue: widget.minValue,
+          maxValue: widget.maxValue,
+          onChanged: (value) => setState(() => _currentValue = value),
+        ),
+      ],
+    );
   }
 }
