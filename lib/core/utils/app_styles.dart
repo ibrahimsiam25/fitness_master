@@ -8,9 +8,10 @@ abstract class AppStyles {
     fontSize: 32.sp,
     color: AppColor.white
   );
-  static const TextStyle body1 = TextStyle(
-    fontWeight: FontWeight.w600,
-    fontSize: 16,
+  static TextStyle body1 = TextStyle(
+    fontWeight: FontWeight.w500,
+    fontSize: 16.sp,
     color: AppColor.white,
   );
+
 }
