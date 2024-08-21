@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:fitness_master/core/utils/app_router.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:fitness_master/core/constants/app_color.dart';
 
 void main() async {
   await ScreenUtil.ensureScreenSize();
@@ -23,9 +25,13 @@ class MyApp extends StatelessWidget {
             statusBarColor: Colors.transparent,
           ),
         );
-        return MaterialApp(
+        return MaterialApp.router(
           debugShowCheckedModeBanner: false,
-          home: child,
+          routerConfig: AppRouter.router,
+          theme: ThemeData(
+            fontFamily: 'Roboto',
+            scaffoldBackgroundColor: AppColor.background,
+          ),
         );
       },
     );
