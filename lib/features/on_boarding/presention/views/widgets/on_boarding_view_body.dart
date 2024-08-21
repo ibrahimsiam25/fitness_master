@@ -1,3 +1,4 @@
+<<<<<<< HEAD:lib/features/on_boarding/presention/views/widgets/on_boarding-view_body.dart
 import 'package:flutter/material.dart';
 import 'package:svg_flutter/svg_flutter.dart';
 import 'package:fitness_master/core/utils/app_styles.dart';
@@ -102,3 +103,33 @@ class PageViewItem extends StatelessWidget {
     );
   }
 }
+=======
+import 'package:fitness_master/core/constants/app_styles.dart';
+import 'package:flutter/material.dart';
+import 'package:svg_flutter/svg_flutter.dart';
+import 'package:fitness_master/core/constants/app_assets.dart';
+
+class OnBoardingViewBody extends StatefulWidget {
+  const OnBoardingViewBody({super.key});
+
+  @override
+  State<OnBoardingViewBody> createState() => _OnBoardingViewBodyState();
+}
+
+class _OnBoardingViewBodyState extends State<OnBoardingViewBody> {
+  @override
+  Widget build(BuildContext context) {
+    return PageView(
+      children: [
+        Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            SvgPicture.asset(AppAssets.onBording1),
+            const Text("Exercise library", style: AppStyles.header1)
+          ],
+        )
+      ],
+    );
+  }
+}
+>>>>>>> b45376dabd36a3547f99b5596ae71b1e03a4ba90:lib/features/on_boarding/presention/views/widgets/on_boarding_view_body.dart
