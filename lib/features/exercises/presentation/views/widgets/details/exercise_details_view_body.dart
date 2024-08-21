@@ -89,12 +89,14 @@ class _ExerciseDetailsViewBodyState extends State<ExerciseDetailsViewBody> {
           SizedBox(height: 24.0.h),
           MainButton(
             onTap: () {
-              if (isPlayin) {
-                _timer?.cancel();
-                isPlayin = false;
-              } else {
-                _startTimer();
-              }
+              setState(() {
+                if (isPlayin) {
+                  _timer?.cancel();
+                  isPlayin = false;
+                } else {
+                  _startTimer();
+                }
+              });
             },
             color: AppColor.theme,
             text: isPlayin == false ? 'Start' : 'Stop',
