@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:fitness_master/core/utils/app_styles.dart';
 
-
 class PremiumRow extends StatelessWidget {
   const PremiumRow({
     super.key,
@@ -9,17 +8,17 @@ class PremiumRow extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  Row(
+    return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        SizedBox(width: 32.0),
-        Spacer(),
+        const SizedBox(width: 32.0),
+        const Spacer(),
         Text(
           'Premium',
           style: AppStyles.header1,
         ),
-        Spacer(),
-        Icon(
+        const Spacer(),
+        const Icon(
           Icons.clear,
           color: Colors.white,
           size: 32,
