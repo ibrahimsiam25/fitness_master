@@ -1,7 +1,7 @@
-import 'package:fitness_master/features/on_boarding/presention/views/limited_functionality_view.dart';
 import 'package:go_router/go_router.dart';
 import '../../features/splash/presention/views/splash_view.dart';
 import 'package:fitness_master/features/on_boarding/presention/views/on_boarding_view.dart';
+import 'package:fitness_master/features/on_boarding/presention/views/limited_functionality_view.dart';
 
 abstract class AppRouter {
   static const kOnBoardingView = '/onBoardingView';
@@ -9,7 +9,7 @@ abstract class AppRouter {
     routes: [
       GoRoute(
         path: '/',
-        builder: (context, state) => const LimitedFunctionalityView(),
+        builder: (context, state) => const SplashView(),
       ),
       GoRoute(
         path: kOnBoardingView,

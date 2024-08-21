@@ -33,6 +33,7 @@ dependencies:
     sdk: flutter
   flutter_screenutil: ^5.9.3
   go_router: ^14.2.6
+  shared_preferences: ^2.3.2
   svg_flutter: ^0.0.1
 
 dev_dependencies:
@@ -68,7 +69,5 @@ flutter:
           weight: 500
         - asset: assets/fonts/Roboto-Regular.ttf
           weight: 400
-         
-  #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages

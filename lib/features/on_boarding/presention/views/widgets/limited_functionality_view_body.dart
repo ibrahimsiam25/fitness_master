@@ -1,7 +1,7 @@
-import 'package:fitness_master/core/constants/app_styles.dart';
-import 'package:flutter/material.dart';
-
 import 'premium_row.dart';
+import 'package:flutter/material.dart';
+import 'package:fitness_master/core/utils/app_styles.dart';
+
 
 class LimitedFunctionalityViewBody extends StatelessWidget {
   const LimitedFunctionalityViewBody({super.key});
