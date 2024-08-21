@@ -3,7 +3,7 @@ import 'package:go_router/go_router.dart';
 import 'package:svg_flutter/svg_flutter.dart';
 import '../../../../../core/utils/app_router.dart';
 import 'package:fitness_master/core/constants/app_styles.dart';
-import 'package:fitness_master/core/constants/app-assets.dart';
+import 'package:fitness_master/core/constants/app_assets.dart';
 
 
 class SplashViewBody extends StatefulWidget {
@@ -26,7 +26,7 @@ class _SplashViewBodyState extends State<SplashViewBody> {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Center(child: SvgPicture.asset(AppAssets.logo)),
-        const Text(
+        Text(
           "Fitness Master",
           style: AppStyles.header1,
         )
