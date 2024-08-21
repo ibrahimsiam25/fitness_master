@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'widgets/on_boarding-view_body.dart';
+import 'package:fitness_master/features/on_boarding/presention/views/widgets/on_boarding_view_body.dart';
+
 
 
 class OnBoardingView extends StatelessWidget {

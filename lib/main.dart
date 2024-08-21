@@ -5,11 +5,9 @@ import 'package:fitness_master/core/utils/app_router.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:fitness_master/core/constants/app_color.dart';
 
-
 void main() async {
- 
   await ScreenUtil.ensureScreenSize();
-   await SharedPref.init();
+  await SharedPref.init();
   runApp(const MyApp());
 }
 
