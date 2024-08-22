@@ -1,3 +1,4 @@
+import 'package:fitness_master/features/settings/presentation/views/settings_view.dart';
 import 'package:go_router/go_router.dart';
 import 'package:fitness_master/features/splash/presention/views/splash_view.dart';
 import 'package:fitness_master/features/on_boarding/presention/views/planning_view.dart';
@@ -12,6 +13,7 @@ abstract class AppRouter {
   static const kLimitedFunctionality = '/limitedFunctionality';
   static const kExercisesView = '/exercisesView';
   static const kExercisesDetails = '/exercisesDetails';
+  static const kSettings = '/settings';
   static final router = GoRouter(
     routes: [
       GoRoute(

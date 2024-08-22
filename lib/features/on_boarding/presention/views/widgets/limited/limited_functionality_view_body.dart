@@ -32,7 +32,7 @@ class LimitedFunctionalityViewBody extends StatelessWidget {
           const MainButton(
             color: AppColor.theme,
             textColor: AppColor.black,
-            text: 'Buy premium for 0,99',
+            text: 'Buy premium for \$0,99',
           ),
           SizedBox(height: 11.0.h),
         ],

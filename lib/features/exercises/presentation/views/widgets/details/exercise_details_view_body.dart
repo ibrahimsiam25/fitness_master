@@ -8,7 +8,6 @@ import 'package:fitness_master/features/exercises/presentation/views/widgets/det
 import 'package:fitness_master/features/exercises/presentation/views/widgets/details/details_appbar.dart';
 import 'package:fitness_master/features/exercises/presentation/views/widgets/details/details_main_row.dart';
 
-
 class ExerciseDetailsViewBody extends StatefulWidget {
   const ExerciseDetailsViewBody({super.key});
 
@@ -22,12 +21,6 @@ class _ExerciseDetailsViewBodyState extends State<ExerciseDetailsViewBody> {
   int _remainingSeconds = maxSeconds;
   Timer? _timer;
   bool isPlayin = false;
-
-  @override
-  void initState() {
-    super.initState();
-    _startTimer();
-  }
 
   void _startTimer() {
     _timer = Timer.periodic(const Duration(seconds: 1), (timer) {
@@ -79,14 +72,18 @@ class _ExerciseDetailsViewBodyState extends State<ExerciseDetailsViewBody> {
             'Lorem ipsum dolor sit amet, consectetur Lorem ipsum dolor sit amet, consectetur Lorem ipsum dolor sit amet, consectetur Lorem ipsum dolor sit amet, consectetur Lorem ipsum dolor sit amet, consectetur Lorem ipsum dolor sit amet, consectetur Lorem ipsum dolor sit amet, consectetur.',
             style: AppStyles.body4,
           ),
-         const Spacer(flex: 1,), 
+          const Spacer(
+            flex: 1,
+          ),
           Align(
             child: Text(
               _formatTime(_remainingSeconds),
               style: AppStyles.header1,
             ),
           ),
-         const Spacer(flex: 1,),
+          const Spacer(
+            flex: 1,
+          ),
           MainButton(
             onTap: () {
               setState(() {
@@ -102,7 +99,9 @@ class _ExerciseDetailsViewBodyState extends State<ExerciseDetailsViewBody> {
             text: isPlayin == false ? 'Start' : 'Stop',
             textColor: AppColor.black,
           ),
-            const Spacer(flex: 6,),
+          const Spacer(
+            flex: 6,
+          ),
         ],
       ),
     );

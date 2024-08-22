@@ -26,3 +26,9 @@ Map exercises = {
     100.0.w,
   ]
 };
+List settingsTitles = [
+  'Privacy policy',
+  'Terms of use',
+  'Support',
+  'Restore purchases',
+];
