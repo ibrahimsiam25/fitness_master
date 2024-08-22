@@ -4,9 +4,11 @@ import 'package:fitness_master/features/on_boarding/presention/views/planning_vi
 import 'package:fitness_master/features/exercises/presentation/views/exercises_view.dart';
 import 'package:fitness_master/features/on_boarding/presention/views/on_boarding_view.dart';
 import 'package:fitness_master/features/home/presentation/views/widgets/bottom_nav_bar.dart';
+import 'package:fitness_master/features/water_and_calories/presention/views/add_meal_view.dart';
 import 'package:fitness_master/features/exercises/presentation/views/exercise_details_view.dart';
 import 'package:fitness_master/features/on_boarding/presention/views/limited_functionality_view.dart';
 import 'package:fitness_master/features/water_and_calories/presention/views/water_and_calories_view.dart';
+
 
 abstract class AppRouter {
   static const kOnBoardingView = '/onBoardingView';
@@ -16,6 +18,8 @@ abstract class AppRouter {
   static const kExercisesView = '/exercisesView';
   static const kExercisesDetails = '/exercisesDetails';
   static const kWaterAndCalories = '/waterAndCalories';
+  static const kAddMeal = '/addMeal';
+  static const kAddWater = '/addWater';
   static const kSettings = '/settings';
   static const kBottomNavigationBar = '/bottomNavigationBar';
   static final router = GoRouter(
@@ -51,6 +55,12 @@ abstract class AppRouter {
       GoRoute(
           path: kWaterAndCalories,
           builder: (context, state) => const WaterAndCaloriesView()),
+      GoRoute(
+          path: kAddMeal,
+          builder: (context, state) => const AddMealView()),
+      // GoRoute(
+      //     path: kWaterAndCalories,
+      //     builder: (context, state) => const WaterAndCaloriesView()),
       GoRoute(
         path: kBottomNavigationBar,
         builder: (context, state) => const BottomNavigationBarController(),
