@@ -1,10 +1,9 @@
 import 'package:fitness_master/core/constants/app_color.dart';
-import 'package:fitness_master/core/utils/app_styles.dart';
+import 'package:fitness_master/features/water_and_calories/presention/views/widgets/custom_date_time.dart';
 import 'package:fitness_master/features/water_and_calories/presention/views/widgets/custom_meal.dart';
 import 'package:fitness_master/features/water_and_calories/presention/views/widgets/water_intake.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:intl/intl.dart';
 
 class CustomDay extends StatelessWidget {
   const CustomDay({
@@ -13,7 +12,6 @@ class CustomDay extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    DateTime now = DateTime.now();
     return Container(
       decoration: BoxDecoration(
           color: AppColor.black, borderRadius: BorderRadius.circular(14.0.r)),
@@ -22,12 +20,7 @@ class CustomDay extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text(
-              '${DateFormat('MMMM').format(
-                now,
-              )}  ${now.day}',
-              style: AppStyles.body2,
-            ),
+            const CustomDateTime(),
             SizedBox(height: 20.0.h),
             const CustomMeal(
               name: 'Breakfast',
