@@ -1,14 +1,15 @@
-// ignore_for_file: deprecated_member_use
-
-import 'package:fitness_master/core/constants/app_assets.dart';
-import 'package:fitness_master/core/constants/app_color.dart';
-import 'package:fitness_master/features/exercises/presentation/views/exercises_view.dart';
-import 'package:fitness_master/features/home/presentation/views/home_view.dart';
-import 'package:fitness_master/features/settings/presentation/views/settings_view.dart';
+import 'package:svg_flutter/svg.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:fitness_master/core/constants/app_color.dart';
+import 'package:fitness_master/core/constants/app_assets.dart';
 import 'package:persistent_bottom_nav_bar/persistent_bottom_nav_bar.dart';
-import 'package:svg_flutter/svg.dart';
+import 'package:fitness_master/features/home/presentation/views/home_view.dart';
+import 'package:fitness_master/features/settings/presentation/views/settings_view.dart';
+import 'package:fitness_master/features/exercises/presentation/views/exercises_view.dart';
+import 'package:fitness_master/features/water_and_calories/presention/views/water_and_calories_view.dart';
+// ignore_for_file: deprecated_member_use
+
 
 class BottomNavigationBarController extends StatefulWidget {
   const BottomNavigationBarController({super.key});
@@ -40,7 +41,7 @@ class _BottomNavigationBarControllerState
       const HomeView(),
       const ExercisesView(),
       const Center(child: Text('3.Progress')),
-      const Center(child: Text('4.Water & Calories Intake')),
+      const WaterAndCaloriesView(),
       const SettingsView(),
     ];
   }
