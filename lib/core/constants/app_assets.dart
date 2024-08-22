@@ -8,4 +8,9 @@ class AppAssets {
   static const image13 = 'assets/images/image 13.png';
   static const image11 = 'assets/images/image 11.png';
   static const image1 = 'assets/images/image 1.png';
+  static const home = 'assets/icons/image 1.png';
+  static const exercise = 'assets/icons/image 1.png';
+  static const elements = 'assets/icons/image 1.png';
+  static const chart = 'assets/icons/image 1.png';
+  static const settings = 'assets/icons/image 1.png';
 }
