@@ -7,17 +7,15 @@ import '../../../../../core/constants/app_assets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class CalendarWidget extends StatefulWidget {
-   final bool  isDrobed; 
+  final bool isDrobed;
 
-  CalendarWidget({this.isDrobed = false});
+  const CalendarWidget({super.key, this.isDrobed = false});
   @override
-  _CalendarWidgetState createState() => _CalendarWidgetState();
-
+  CalendarWidgetState createState() => CalendarWidgetState();
 }
 
-class _CalendarWidgetState extends State<CalendarWidget> {
- 
-  Set<DateTime> _selectedDays = {};
+class CalendarWidgetState extends State<CalendarWidget> {
+  final Set<DateTime> _selectedDays = {};
 
   @override
   Widget build(BuildContext context) {
@@ -31,14 +29,15 @@ class _CalendarWidgetState extends State<CalendarWidget> {
           lastDay: DateTime.utc(2030, 3, 14),
           focusedDay: DateTime.now(),
           selectedDayPredicate: (day) {
-            return _selectedDays.any((selectedDay) => isSameDay(selectedDay, day));
+            return _selectedDays
+                .any((selectedDay) => isSameDay(selectedDay, day));
           },
           onDaySelected: (selectedDay, focusedDay) {
             setState(() {
               if (_selectedDays.contains(selectedDay)) {
-                _selectedDays.remove(selectedDay); 
+                _selectedDays.remove(selectedDay);
               } else {
-                _selectedDays.add(selectedDay); 
+                _selectedDays.add(selectedDay);
               }
             });
           },
@@ -46,18 +45,16 @@ class _CalendarWidgetState extends State<CalendarWidget> {
             defaultTextStyle: AppStyles.body5,
             weekendTextStyle: AppStyles.body5,
             todayTextStyle: AppStyles.body5.copyWith(color: AppColor.theme),
-            todayDecoration: BoxDecoration(),
-          
-            outsideTextStyle: AppStyles.body5.copyWith(color: AppColor.darkGray),
+            todayDecoration: const BoxDecoration(),
+            outsideTextStyle:
+                AppStyles.body5.copyWith(color: AppColor.darkGray),
             selectedDecoration: BoxDecoration(
-         
               shape: BoxShape.circle,
               border: Border.all(
                 color: AppColor.theme, // Border color
                 width: 2.0, // Border width
               ),
             ),
-           
           ),
           headerStyle: HeaderStyle(
             formatButtonVisible: false,
