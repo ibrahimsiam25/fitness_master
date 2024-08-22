@@ -32,3 +32,18 @@ List settingsTitles = [
   'Support',
   'Restore purchases',
 ];
+
+Map meals = {
+  'title': [
+    'Calories',
+    'Protein',
+    'Fat',
+    'Carbohydrate',
+  ],
+  'value': [
+    10,
+    30,
+    15,
+    45,
+  ]
+};
