@@ -25,7 +25,7 @@ class HomeViewBody extends StatelessWidget {
         ),
         const WoroutForTheWeek(),
         SizedBox(
-          height: 100.0.h,
+          height: 88.0.h,
         ),
       ],
     );

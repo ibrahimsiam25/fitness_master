@@ -34,6 +34,7 @@ class WaterAndCaloriesBody extends StatelessWidget {
             ),
             SizedBox(height: 24.0.h),
             const CustomDay(),
+            SizedBox(height: 80.0.h),
           ],
         ),
       ),
