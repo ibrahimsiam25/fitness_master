@@ -22,7 +22,7 @@ class CustomMealAndWaterItem extends StatelessWidget {
     return GestureDetector(
       onTap: onTap,
       child: Container(
-        width: 150.w,
+        width: 160.w,
         height: 100.h,
         padding: const EdgeInsets.all(11),
         decoration: BoxDecoration(
