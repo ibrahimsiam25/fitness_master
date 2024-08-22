@@ -1,25 +1,27 @@
+// ignore_for_file: deprecated_member_use
+
 import 'package:fitness_master/core/constants/app_assets.dart';
+import 'package:fitness_master/core/constants/app_color.dart';
 import 'package:fitness_master/features/exercises/presentation/views/exercises_view.dart';
 import 'package:fitness_master/features/home/presentation/views/home_view.dart';
-import 'package:fitness_master/features/home/presentation/views/widgets/custom_nav_bar_selected_icon.dart';
 import 'package:fitness_master/features/settings/presentation/views/settings_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:go_router/go_router.dart';
 import 'package:persistent_bottom_nav_bar/persistent_bottom_nav_bar.dart';
 import 'package:svg_flutter/svg.dart';
 
-class BottomNavBarController extends StatefulWidget {
-  const BottomNavBarController({super.key});
+class BottomNavigationBarController extends StatefulWidget {
+  const BottomNavigationBarController({super.key});
 
   @override
-  State<BottomNavBarController> createState() => _BottomNavBarControllerState();
+  State<BottomNavigationBarController> createState() =>
+      _BottomNavigationBarControllerState();
 }
 
-class _BottomNavBarControllerState extends State<BottomNavBarController> {
+class _BottomNavigationBarControllerState
+    extends State<BottomNavigationBarController> {
   late PersistentTabController _controller;
-  int selectedIndex = 0;
-  int? extra;
+  int _selectedIndex = 0;
 
   @override
   void initState() {
@@ -28,20 +30,8 @@ class _BottomNavBarControllerState extends State<BottomNavBarController> {
   }
 
   @override
-  void didChangeDependencies() {
-    super.didChangeDependencies();
-    extra = GoRouterState.of(context).extra as int?;
-
-    if (extra != null) {
-      _controller = PersistentTabController(initialIndex: extra!);
-      selectedIndex = extra!;
-    }
-  }
-
-  @override
   void dispose() {
-    _controller.dispose();
-
+    _controller = PersistentTabController(initialIndex: 0);
     super.dispose();
   }
 
@@ -58,33 +48,51 @@ class _BottomNavBarControllerState extends State<BottomNavBarController> {
   List<PersistentBottomNavBarItem> navBarsItems() {
     return [
       PersistentBottomNavBarItem(
-        icon: selectedIndex == 0
-            ? CustomBottomNavBarSelectedIcon(
-                child: SvgPicture.asset(AppAssets.home))
+        icon: _selectedIndex == 0
+            ? CustomSelectedIcon(
+                child: SvgPicture.asset(
+                  AppAssets.home,
+                  color: AppColor.black,
+                ),
+              )
             : SvgPicture.asset(AppAssets.home),
       ),
       PersistentBottomNavBarItem(
-        icon: selectedIndex == 1
-            ? CustomBottomNavBarSelectedIcon(
-                child: SvgPicture.asset(AppAssets.exercise))
+        icon: _selectedIndex == 1
+            ? CustomSelectedIcon(
+                child: SvgPicture.asset(
+                AppAssets.exercise,
+                color: AppColor.black,
+              ))
             : SvgPicture.asset(AppAssets.exercise),
       ),
       PersistentBottomNavBarItem(
-        icon: selectedIndex == 2
-            ? CustomBottomNavBarSelectedIcon(
-                child: SvgPicture.asset(AppAssets.elements))
+        icon: _selectedIndex == 2
+            ? CustomSelectedIcon(
+                child: SvgPicture.asset(
+                  AppAssets.elements,
+                  color: AppColor.black,
+                ),
+              )
             : SvgPicture.asset(AppAssets.elements),
       ),
       PersistentBottomNavBarItem(
-        icon: selectedIndex == 3
-            ? CustomBottomNavBarSelectedIcon(
-                child: SvgPicture.asset(AppAssets.chart))
+        icon: _selectedIndex == 3
+            ? CustomSelectedIcon(
+                child: SvgPicture.asset(
+                AppAssets.chart,
+                color: AppColor.black,
+              ))
             : SvgPicture.asset(AppAssets.chart),
       ),
       PersistentBottomNavBarItem(
-        icon: selectedIndex == 4
-            ? CustomBottomNavBarSelectedIcon(
-                child: SvgPicture.asset(AppAssets.settings))
+        icon: _selectedIndex == 4
+            ? CustomSelectedIcon(
+                child: SvgPicture.asset(
+                  AppAssets.settings,
+                  color: AppColor.black,
+                ),
+              )
             : SvgPicture.asset(AppAssets.settings),
       ),
     ];
@@ -93,12 +101,14 @@ class _BottomNavBarControllerState extends State<BottomNavBarController> {
   @override
   Widget build(BuildContext context) {
     return PersistentTabView(
-      stateManagement: true,
-      resizeToAvoidBottomInset: true,
-      backgroundColor: const Color(0xff282828),
-      navBarHeight: 66.h,
+      backgroundColor: AppColor.black,
+      decoration: NavBarDecoration(
+        borderRadius: BorderRadius.circular(100.r),
+      ),
+      navBarHeight: 56.h,
       confineToSafeArea: false,
-      padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 15.h),
+      margin: EdgeInsets.symmetric(horizontal: 43.5.w, vertical: 16.h),
+      padding: const EdgeInsets.all(5),
       navBarStyle: NavBarStyle.simple,
       context,
       controller: _controller,
@@ -106,9 +116,33 @@ class _BottomNavBarControllerState extends State<BottomNavBarController> {
       items: navBarsItems(),
       onItemSelected: (index) {
         setState(() {
-          selectedIndex = index;
+          _selectedIndex = index;
         });
       },
+    );
+  }
+}
+
+class CustomSelectedIcon extends StatelessWidget {
+  const CustomSelectedIcon({
+    super.key,
+    required this.child,
+  });
+
+  final Widget child;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: 40.0.w,
+      height: 40.0.h,
+      padding: const EdgeInsets.all(8),
+      margin: const EdgeInsets.all(8),
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(50),
+        color: AppColor.theme,
+      ),
+      child: child,
     );
   }
 }
