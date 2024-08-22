@@ -1,20 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:svg_flutter/svg_flutter.dart';
-import '../../../../../core/constants/app_color.dart';
+import '../../../../../../core/constants/app_color.dart';
 import 'package:fitness_master/core/utils/app_styles.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 
 class CustomMealAndWaterItem extends StatelessWidget {
   const CustomMealAndWaterItem({
     super.key,
     required this.text,
     required this.onTap,
-    required this.isClicked,
-    required this.svgPicture,
+    
+    required this.svgPicture, required this.number,
   });
   final String text;
   final void Function() onTap;
-  final bool isClicked;
+  final int number;
   final SvgPicture svgPicture;
   @override
   Widget build(BuildContext context) {
@@ -26,12 +27,12 @@ class CustomMealAndWaterItem extends StatelessWidget {
         padding: const EdgeInsets.all(11),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(14.r),
-          color: isClicked ? AppColor.theme : AppColor.black,
+          color: number ==0 ? AppColor.theme : AppColor.black,
         ),
         child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
           ColorFiltered(
             colorFilter: ColorFilter.mode(
-              isClicked ? AppColor.black : AppColor.theme,
+             number ==0? AppColor.black : AppColor.theme,
               BlendMode.srcIn,
             ),
             child: svgPicture,
@@ -42,7 +43,7 @@ class CustomMealAndWaterItem extends StatelessWidget {
           Text(
             text,
             style: AppStyles.body1
-                .copyWith(color: isClicked ? AppColor.black : AppColor.white),
+                .copyWith(color:number ==0 ? AppColor.black : AppColor.white),
             textAlign: TextAlign.center,
           )
         ]),
