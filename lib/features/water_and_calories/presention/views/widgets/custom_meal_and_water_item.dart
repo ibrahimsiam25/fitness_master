@@ -40,10 +40,10 @@ class CustomMealAndWaterItem extends StatelessWidget {
             height: 10.h,
           ),
           Text(
-            "Add a meal",
+            text,
             style: AppStyles.body1
                 .copyWith(color: isClicked ? AppColor.black : AppColor.white),
-            textAlign: TextAlign.start,
+            textAlign: TextAlign.center,
           )
         ]),
       ),
