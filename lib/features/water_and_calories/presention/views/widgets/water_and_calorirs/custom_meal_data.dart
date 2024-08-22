@@ -23,7 +23,7 @@ class CustomMeal extends StatelessWidget {
         ),
         SizedBox(height: 16.0.h),
         SizedBox(
-          height: 45.0.h,
+          height: 48.0.h,
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: List.generate(
