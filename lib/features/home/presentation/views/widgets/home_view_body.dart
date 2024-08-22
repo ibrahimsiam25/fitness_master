@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:fitness_master/core/constants/const.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:fitness_master/features/home/presentation/views/widgets/Todays_time_counter.dart';
 import 'package:fitness_master/features/home/presentation/views/widgets/custom_drob_contianer.dart';
+
 
 class HomeViewBody extends StatelessWidget {
   const HomeViewBody({super.key});
@@ -15,7 +17,11 @@ class HomeViewBody extends StatelessWidget {
           SizedBox(
             height: 24.h,
           ),
-          const CustomDrobContainer()
+       const   CustomDrobContainer(),
+              SizedBox(
+            height: 24.h,
+          ),
+        const  TodaysTimeCounter()
         ],
       ),
     );
