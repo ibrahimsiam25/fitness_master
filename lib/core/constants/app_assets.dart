@@ -10,6 +10,7 @@ class AppAssets {
   static const arrowRight = 'assets/icons/arrow_left.svg';
   static const arrowLeft = 'assets/icons/arrow_right.svg';
   static const food = 'assets/icons/food.svg';
+  static const water = 'assets/icons/soft-drink-02.svg';
   static const image13 = 'assets/images/image 13.png';
   static const image11 = 'assets/images/image 11.png';
   static const image1 = 'assets/images/image 1.png';

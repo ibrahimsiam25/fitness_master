@@ -32,3 +32,4 @@ List settingsTitles = [
   'Support',
   'Restore purchases',
 ];
+
