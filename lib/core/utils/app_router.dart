@@ -1,4 +1,3 @@
-import 'package:fitness_master/features/settings/presentation/views/settings_view.dart';
 import 'package:go_router/go_router.dart';
 import 'package:fitness_master/features/splash/presention/views/splash_view.dart';
 import 'package:fitness_master/features/on_boarding/presention/views/planning_view.dart';
