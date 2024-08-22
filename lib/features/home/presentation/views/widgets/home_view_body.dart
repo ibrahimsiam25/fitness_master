@@ -2,7 +2,6 @@ import 'package:fitness_master/features/home/presentation/views/widgets/custom_d
 import 'package:fitness_master/features/home/presentation/views/widgets/todays_time_counter.dart';
 import 'package:fitness_master/features/home/presentation/views/widgets/worout_for_the_week.dart';
 import 'package:flutter/material.dart';
-import 'package:fitness_master/core/constants/const.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class HomeViewBody extends StatelessWidget {
@@ -25,6 +24,9 @@ class HomeViewBody extends StatelessWidget {
           height: 24.h,
         ),
         const WoroutForTheWeek(),
+        SizedBox(
+          height: 100.0.h,
+        ),
       ],
     );
   }

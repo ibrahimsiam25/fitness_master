@@ -1,4 +1,3 @@
-import 'package:fitness_master/features/home/presentation/views/widgets/bottom_nav_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:svg_flutter/svg_flutter.dart';
