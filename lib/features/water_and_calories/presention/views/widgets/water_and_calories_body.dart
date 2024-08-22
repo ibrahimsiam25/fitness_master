@@ -1,3 +1,4 @@
+import 'package:fitness_master/features/water_and_calories/presention/views/widgets/custom_date_time.dart';
 import 'package:flutter/material.dart';
 import 'package:svg_flutter/svg_flutter.dart';
 import '../../../../../core/constants/app_assets.dart';
@@ -6,7 +7,7 @@ import 'package:fitness_master/core/utils/app_styles.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:fitness_master/core/constants/app_color.dart';
 import 'package:fitness_master/features/water_and_calories/presention/views/widgets/custom_day.dart';
-import 'package:fitness_master/features/water_and_calories/presention/views/widgets/custom_meal.dart';
+import 'package:fitness_master/features/water_and_calories/presention/views/widgets/custom_meal_data.dart';
 import 'package:fitness_master/features/water_and_calories/presention/views/widgets/custom_meal_and_water_item.dart';
 
 class WaterAndCaloriesBody extends StatefulWidget {
@@ -23,46 +24,64 @@ class _WaterAndCaloriesBodyState extends State<WaterAndCaloriesBody> {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
-        child: Padding(
+        child: ListView(
       padding: const EdgeInsets.symmetric(horizontal: kHorizontalPadding),
-      child: Column(
-        children: [
-          Align(
-              alignment: Alignment.centerLeft,
-              child: Text(
-                "Water & Calories\nIntake",
-                style: AppStyles.header1,
-                textAlign: TextAlign.start,
-              )),
-          SizedBox(
-            height: 24.h,
+      children: [
+        Align(
+            alignment: Alignment.centerLeft,
+            child: Text(
+              "Water & Calories\nIntake",
+              style: AppStyles.header1,
+              textAlign: TextAlign.start,
+            )),
+        SizedBox(
+          height: 24.h,
+        ),
+        const Align(
+          alignment: Alignment.centerLeft,
+          child: CustomDateTime(),
+        ),
+        SizedBox(
+          height: 24.h,
+        ),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: List.generate(
+            2,
+            (index) {
+              return CustomMealAndWaterItem(
+                text: mealAndWaterTextList[index],
+                onTap: () {
+                  setState(() {
+                    no = index;
+                  });
+                },
+                isClicked: index == no,
+                svgPicture: SvgPicture.asset(mealAndWaterIconList[index]),
+              );
+            },
           ),
-          Align(
-              alignment: Alignment.centerLeft,
-              child: Text(
-                "Aug 12, 2024",
-                style: AppStyles.body2,
-                textAlign: TextAlign.start,
-              )),
-          SizedBox(
-            height: 24.h,
+        ),
+        SizedBox(
+          height: 24.h,
+        ),
+        Container(
+          padding: EdgeInsets.symmetric(horizontal: 16.0.w, vertical: 20.0.h),
+          decoration: BoxDecoration(
+            color: AppColor.black,
+            borderRadius: BorderRadius.circular(14.0.r),
           ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: List.generate(2, (index) {
-            return CustomMealAndWaterItem(
-              text: mealAndWaterTextList[index],
-              onTap: () {
-                setState(() {
-                  no = index;
-                });
-              },
-              isClicked: index == no,
-              svgPicture: SvgPicture.asset(mealAndWaterIconList[index]),
-            );
-          }))
-        ],
-      ),
+          child: const CustomMeal(
+            name: 'Breakfast',
+            cross: CrossAxisAlignment.center,
+          ),
+        ),
+        SizedBox(
+          height: 24.h,
+        ),
+        const CustomDay(),
+        SizedBox(height: 80.0.h),
+      ],
     ));
   }
 }

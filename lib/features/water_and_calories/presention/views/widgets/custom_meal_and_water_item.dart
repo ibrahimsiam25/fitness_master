@@ -21,15 +21,15 @@ class CustomMealAndWaterItem extends StatelessWidget {
     return GestureDetector(
       onTap: onTap,
       child: Container(
-        width:  150.w,
+        width: 150.w,
         height: 100.h,
-        padding: EdgeInsets.all(11),
+        padding: const EdgeInsets.all(11),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(14.r),
           color: isClicked ? AppColor.theme : AppColor.black,
         ),
         child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
-             ColorFiltered(
+          ColorFiltered(
             colorFilter: ColorFilter.mode(
               isClicked ? AppColor.black : AppColor.theme,
               BlendMode.srcIn,

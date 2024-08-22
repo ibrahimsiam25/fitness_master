@@ -1,6 +1,6 @@
 import 'package:fitness_master/core/constants/app_color.dart';
 import 'package:fitness_master/features/water_and_calories/presention/views/widgets/custom_date_time.dart';
-import 'package:fitness_master/features/water_and_calories/presention/views/widgets/custom_meal.dart';
+import 'package:fitness_master/features/water_and_calories/presention/views/widgets/custom_meal_data.dart';
 import 'package:fitness_master/features/water_and_calories/presention/views/widgets/water_intake.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
