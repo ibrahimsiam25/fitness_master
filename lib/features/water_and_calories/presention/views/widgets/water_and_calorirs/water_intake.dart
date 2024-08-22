@@ -22,7 +22,6 @@ class WaterIntake extends StatelessWidget {
         ),
         SizedBox(height: 16.0.h),
         SizedBox(
-          height: 120.0.h,
           width: 311.0.w,
           child: Center(
             child: Column(
@@ -55,7 +54,8 @@ class WaterIntake extends StatelessWidget {
               ],
             ),
           ),
-        )
+        ),
+        SizedBox(height: 8.0.h),
       ],
     );
   }
