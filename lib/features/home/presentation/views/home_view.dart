@@ -13,7 +13,6 @@ class HomeView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      bottomNavigationBar: const BottomNavBarController(),
       appBar: cusyomAppBar(
           title: "Home",
           icon: SvgPicture.asset(AppAssets.editIcon),
