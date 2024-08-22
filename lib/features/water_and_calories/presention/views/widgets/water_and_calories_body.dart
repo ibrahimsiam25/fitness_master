@@ -4,6 +4,9 @@ import '../../../../../core/constants/app_assets.dart';
 import 'package:fitness_master/core/constants/const.dart';
 import 'package:fitness_master/core/utils/app_styles.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:fitness_master/core/constants/app_color.dart';
+import 'package:fitness_master/features/water_and_calories/presention/views/widgets/custom_day.dart';
+import 'package:fitness_master/features/water_and_calories/presention/views/widgets/custom_meal.dart';
 import 'package:fitness_master/features/water_and_calories/presention/views/widgets/custom_meal_and_water_item.dart';
 
 class WaterAndCaloriesBody extends StatefulWidget {

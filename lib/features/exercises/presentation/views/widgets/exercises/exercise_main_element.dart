@@ -21,79 +21,83 @@ class ExerciseMainElement extends StatelessWidget {
         padding: EdgeInsets.symmetric(horizontal: 16.0.w),
         child: ListView.builder(
           padding: const EdgeInsets.all(0.0),
-          itemCount: 5,
+          itemCount: 6,
           itemBuilder: (context, index) {
             return BlocBuilder<ExercisesCubit, int>(
               builder: (context, state) {
-                return Padding(
-                  padding: EdgeInsets.only(bottom: 12.0.h),
-                  child: InkWell(
-                    onTap: () {
-                      GoRouter.of(context).push(AppRouter.kExercisesDetails);
-                    },
-                    borderRadius: BorderRadius.circular(23.0.r),
-                    child: Container(
-                      decoration: const BoxDecoration(
-                        color: AppColor.veryDarkGray,
-                        borderRadius: BorderRadius.all(
-                          Radius.circular(23.0),
-                        ),
-                      ),
-                      child: Padding(
-                        padding: EdgeInsets.symmetric(horizontal: 20.0.w),
-                        child: Column(
-                          children: [
-                            SizedBox(height: 20.0.h),
-                            Row(
-                              children: [
-                                Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    Text(
-                                      'Name of exercise',
-                                      style: AppStyles.body2,
-                                    ),
-                                    Text(
-                                      exercises['title'][state],
-                                      style: AppStyles.body1,
-                                    ),
-                                  ],
-                                ),
-                                const Spacer(),
-                                InkWell(
-                                  onTap: () {},
-                                  child: const Icon(
-                                    Icons.bookmark_border,
-                                    size: 24,
-                                    color: AppColor.white,
-                                  ),
-                                ),
-                              ],
-                            ),
-                            SizedBox(height: 16.0.h),
-                            Container(
-                              width: 303.0.w,
-                              height: 185.0.h,
-                              decoration: const BoxDecoration(
-                                color: AppColor.veryDarkGray,
-                                borderRadius: BorderRadius.all(
-                                  Radius.circular(23.0),
-                                ),
-                                image: DecorationImage(
-                                  image: AssetImage(
-                                    AppAssets.image11,
-                                  ),
-                                  fit: BoxFit.fill,
-                                ),
+                return index == 5
+                    ? SizedBox(height: 80.0.h)
+                    : Padding(
+                        padding: EdgeInsets.only(bottom: 12.0.h),
+                        child: InkWell(
+                          onTap: () {
+                            GoRouter.of(context)
+                                .push(AppRouter.kExercisesDetails);
+                          },
+                          borderRadius: BorderRadius.circular(23.0.r),
+                          child: Container(
+                            decoration: const BoxDecoration(
+                              color: AppColor.veryDarkGray,
+                              borderRadius: BorderRadius.all(
+                                Radius.circular(23.0),
                               ),
                             ),
-                            SizedBox(height: 20.0.h),
-                          ],
+                            child: Padding(
+                              padding: EdgeInsets.symmetric(horizontal: 20.0.w),
+                              child: Column(
+                                children: [
+                                  SizedBox(height: 20.0.h),
+                                  Row(
+                                    children: [
+                                      Column(
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
+                                        children: [
+                                          Text(
+                                            'Name of exercise',
+                                            style: AppStyles.body2,
+                                          ),
+                                          Text(
+                                            exercises['title'][state],
+                                            style: AppStyles.body1,
+                                          ),
+                                        ],
+                                      ),
+                                      const Spacer(),
+                                      InkWell(
+                                        onTap: () {},
+                                        child: const Icon(
+                                          Icons.bookmark_border,
+                                          size: 24,
+                                          color: AppColor.white,
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                  SizedBox(height: 16.0.h),
+                                  Container(
+                                    width: 303.0.w,
+                                    height: 185.0.h,
+                                    decoration: const BoxDecoration(
+                                      color: AppColor.veryDarkGray,
+                                      borderRadius: BorderRadius.all(
+                                        Radius.circular(23.0),
+                                      ),
+                                      image: DecorationImage(
+                                        image: AssetImage(
+                                          AppAssets.image11,
+                                        ),
+                                        fit: BoxFit.fill,
+                                      ),
+                                    ),
+                                  ),
+                                  SizedBox(height: 20.0.h),
+                                ],
+                              ),
+                            ),
+                          ),
                         ),
-                      ),
-                    ),
-                  ),
-                );
+                      );
               },
             );
           },

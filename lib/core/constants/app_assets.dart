@@ -19,4 +19,5 @@ class AppAssets {
   static const elements = 'assets/icons/body-weight.svg';
   static const chart = 'assets/icons/chart.svg';
   static const settings = 'assets/icons/Frame 5.svg';
+  static const cub = 'assets/icons/Vector.svg';
 }
