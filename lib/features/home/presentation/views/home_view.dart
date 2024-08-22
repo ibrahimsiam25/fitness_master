@@ -6,7 +6,6 @@ import 'package:fitness_master/core/utils/app_router.dart';
 import 'package:fitness_master/core/constants/app_assets.dart';
 import 'package:fitness_master/features/home/presentation/views/widgets/home_view_body.dart';
 
-
 class HomeView extends StatelessWidget {
   const HomeView({super.key});
 
@@ -23,6 +22,4 @@ class HomeView extends StatelessWidget {
             }),
         body: HomeViewBody());
   }
-
-
 }

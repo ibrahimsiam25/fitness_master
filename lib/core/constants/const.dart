@@ -32,3 +32,24 @@ List settingsTitles = [
   'Support',
   'Restore purchases',
 ];
+
+Map workouts = {
+  'day': [
+    'Mon',
+    'Tue',
+    'Wed',
+    'Thu',
+    'Fri',
+    'Sat',
+    'Sun',
+  ],
+  'date': [
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+  ]
+};
