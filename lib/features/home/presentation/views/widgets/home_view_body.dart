@@ -1,8 +1,8 @@
-import 'package:fitness_master/features/home/presentation/views/widgets/custom_drob_contianer.dart';
-import 'package:fitness_master/features/home/presentation/views/widgets/todays_time_counter.dart';
 import 'package:fitness_master/features/home/presentation/views/widgets/worout_for_the_week.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:fitness_master/features/home/presentation/views/widgets/todays_time_counter.dart';
+import 'package:fitness_master/features/home/presentation/views/widgets/custom_drob_contianer.dart';
 
 class HomeViewBody extends StatelessWidget {
   const HomeViewBody({super.key});
