@@ -5,15 +5,17 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class CustomMeal extends StatelessWidget {
   final String name;
+  final CrossAxisAlignment cross;
   const CustomMeal({
     super.key,
     required this.name,
+    required this.cross,
   });
 
   @override
   Widget build(BuildContext context) {
     return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
+      crossAxisAlignment: cross,
       children: [
         Text(
           name,

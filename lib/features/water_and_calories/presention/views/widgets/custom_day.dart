@@ -13,26 +13,28 @@ class CustomDay extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      padding: EdgeInsets.symmetric(horizontal: 16.0.w, vertical: 20.0.h),
       decoration: BoxDecoration(
-          color: AppColor.black, borderRadius: BorderRadius.circular(14.0.r)),
-      child: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 16.0.w, vertical: 20.0.h),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            const CustomDateTime(),
-            SizedBox(height: 20.0.h),
-            const CustomMeal(
-              name: 'Breakfast',
-            ),
-            SizedBox(height: 24.0.h),
-            const CustomMeal(
-              name: 'Dinner',
-            ),
-            SizedBox(height: 24.0.h),
-            const WaterIntake()
-          ],
-        ),
+        color: AppColor.black,
+        borderRadius: BorderRadius.circular(14.0.r),
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          const CustomDateTime(),
+          SizedBox(height: 20.0.h),
+          const CustomMeal(
+            name: 'Breakfast',
+            cross: CrossAxisAlignment.start,
+          ),
+          SizedBox(height: 24.0.h),
+          const CustomMeal(
+            name: 'Dinner',
+            cross: CrossAxisAlignment.start,
+          ),
+          SizedBox(height: 24.0.h),
+          const WaterIntake()
+        ],
       ),
     );
   }
