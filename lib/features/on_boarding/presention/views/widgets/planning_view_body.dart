@@ -1,10 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+import '../../../../../core/utils/app_router.dart';
 import 'package:fitness_master/core/constants/const.dart';
 import 'package:fitness_master/core/utils/app_styles.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:fitness_master/core/constants/app_color.dart';
+import 'package:fitness_master/features/on_boarding/presention/views/widgets/custom_button.dart';
 import 'package:fitness_master/features/on_boarding/presention/views/widgets/custom_row_goal.dart';
 import 'package:fitness_master/features/on_boarding/presention/views/widgets/custom_row_for_min_and_day.dart';
+
 
 class PlanningViewBody extends StatefulWidget {
   const PlanningViewBody({super.key});
@@ -62,25 +66,11 @@ class _PlanningViewBodyState extends State<PlanningViewBody> {
             const Spacer(
               flex: 1,
             ),
-            Center(
-              child: MaterialButton(
-                onPressed: () {},
-                color: AppColor.theme,
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(13.r),
-                ),
-                child: Padding(
-                  padding: EdgeInsets.symmetric(
-                      horizontal: 28.0.w, vertical: 12.0.h),
-                  child: Text(
-                    "Next",
-                    style: AppStyles.body1.copyWith(color: AppColor.black),
-                  ),
-                ),
-              ),
-            ),
+            CustomButton(onTap: () { 
+               GoRouter.of(context).push(AppRouter.kLimitedFunctionality);
+             },),
             const Spacer(
-              flex: 1,
+              flex: 2,
             ),
           ],
         ),
@@ -88,3 +78,4 @@ class _PlanningViewBodyState extends State<PlanningViewBody> {
     );
   }
 }
+

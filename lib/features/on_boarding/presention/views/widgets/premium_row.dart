@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:fitness_master/core/utils/app_styles.dart';
+import 'package:go_router/go_router.dart';
+import '../../../../../core/utils/app_router.dart';
+import '../../../../../core/utils/app_styles.dart';
+
 
 
 class PremiumRow extends StatelessWidget {
@@ -9,21 +12,19 @@ class PremiumRow extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  Row(
+    return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        SizedBox(width: 32.0),
-        Spacer(),
+        const SizedBox(width: 32.0),
+        const Spacer(),
         Text(
           'Premium',
           style: AppStyles.header1,
         ),
-        Spacer(),
-        Icon(
-          Icons.clear,
-          color: Colors.white,
-          size: 32,
-        ),
+ 
+        IconButton(onPressed: (){
+           GoRouter.of(context).push(AppRouter.kExercisesView);
+        }, icon: Icon(Icons.chevron_right))
       ],
     );
   }

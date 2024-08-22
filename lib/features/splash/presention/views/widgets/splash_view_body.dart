@@ -7,7 +7,6 @@ import 'package:fitness_master/core/utils/app_styles.dart';
 import 'package:fitness_master/core/constants/app_assets.dart';
 import '../../../../../core/service/shared_preferences_singleton.dart';
 
-
 class SplashViewBody extends StatefulWidget {
   const SplashViewBody({super.key});
 
@@ -35,19 +34,15 @@ class _SplashViewBodyState extends State<SplashViewBody> {
       ],
     );
   }
-void excuteNavigation(){
-    bool isOnBoardingView = SharedPref.getBool(kIsOnBoardingView); 
+
+  void excuteNavigation() {
+    bool isOnBoardingView = SharedPref.getBool(kIsOnBoardingView);
     Future.delayed(const Duration(seconds: 3), () {
-      if(isOnBoardingView){
-       
-      }
-      else{
-       context.go(AppRouter.kOnBoardingView);
+      if (isOnBoardingView) {
+      } else {
+        // ignore: use_build_context_synchronously
+        context.go(AppRouter.kOnBoardingView);
       }
     });
   }
 }
-
-
-
- 

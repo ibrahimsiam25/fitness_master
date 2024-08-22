@@ -6,7 +6,6 @@ import '../../../../../core/utils/app_styles.dart';
 import '../../../../../core/constants/app_assets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-
 class PageViewItem extends StatelessWidget {
   const PageViewItem({
     super.key,
@@ -24,9 +23,12 @@ class PageViewItem extends StatelessWidget {
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
+        const Spacer(
+          flex: 8,
+        ),
         SvgPicture.asset(image),
-        SizedBox(
-          height: 148.h,
+        const Spacer(
+          flex: 5,
         ),
         Text(
           text,
@@ -34,12 +36,12 @@ class PageViewItem extends StatelessWidget {
           textAlign: TextAlign.center,
         ),
         SizedBox(
-          height: 41.h,
+          height: 40.h,
         ),
         TextButton(
             onPressed: () {
               if (isLastPage) {
-          context.go(AppRouter.kPlanningView);
+                context.go(AppRouter.kPlanningView);
               } else {
                 // Move to the next page
                 pageController.nextPage(
@@ -50,7 +52,9 @@ class PageViewItem extends StatelessWidget {
             },
             child: SvgPicture.asset(
               AppAssets.arrowIcon,
-            ))
+            )), const Spacer(
+          flex: 2,
+        ),
       ],
     );
   }
