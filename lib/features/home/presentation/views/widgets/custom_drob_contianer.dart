@@ -20,52 +20,52 @@ class _CustomDrobContainerState extends State<CustomDrobContainer> {
   @override
   Widget build(BuildContext context) {
     return Container(
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(14.r),
-          color: AppColor.black,
-        ),
-        padding: EdgeInsets.all(12.r),
-        child: Column(
-          children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                SvgPicture.asset(AppAssets.fireIcon),
-                Column(
-                  children: [
-                    Text(
-                      "Weeks streak",
-                      style: AppStyles.body2,
-                    ),
-                    Text(
-                      "Keep going!",
-                      style: AppStyles.body1,
-                    ),
-                  ],
-                ),
-                IconButton(
-                    onPressed: () {
-                      setState(() {
-                        isDrobed = !isDrobed;
-                      });
-                    },
-                    icon: SvgPicture.asset(AppAssets.arrowDown))
-              ],
-            ),
-            Visibility(
-              visible: isDrobed,
-              child: Container(
-                color: Colors.black,
-                child:TableCalendar(
-                  daysOfWeekVisible: false,
-              
-  firstDay: DateTime.utc(2010, 10, 16),
-  lastDay: DateTime.utc(2030, 3, 14),
-  focusedDay: DateTime.now(),
-),
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(14.r),
+        color: AppColor.black,
+      ),
+      padding: EdgeInsets.all(12.r),
+      child: Column(
+        children: [
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              SvgPicture.asset(AppAssets.fireIcon),
+              Column(
+                children: [
+                  Text(
+                    "Weeks streak",
+                    style: AppStyles.body2,
+                  ),
+                  Text(
+                    "Keep going!",
+                    style: AppStyles.body1,
+                  ),
+                ],
               ),
-            )
-          ],
-        ));
+              IconButton(
+                  onPressed: () {
+                    setState(() {
+                      isDrobed = !isDrobed;
+                    });
+                  },
+                  icon: SvgPicture.asset(AppAssets.arrowDown))
+            ],
+          ),
+          Visibility(
+            visible: isDrobed,
+            child: Container(
+              color: Colors.black,
+              child: TableCalendar(
+                daysOfWeekVisible: false,
+                firstDay: DateTime.utc(2010, 10, 16),
+                lastDay: DateTime.utc(2030, 3, 14),
+                focusedDay: DateTime.now(),
+              ),
+            ),
+          )
+        ],
+      ),
+    );
   }
 }

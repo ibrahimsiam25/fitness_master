@@ -14,14 +14,15 @@ class TodaysTimeCounter extends StatelessWidget {
     return Container(
       padding: EdgeInsets.all(20.w),
       decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(14.r), color: AppColor.black),
+        borderRadius: BorderRadius.circular(14.r),
+        color: AppColor.black,
+      ),
       child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           SizedBox(
               width: 170.w,
               child: Text(
-                "Today's time counter",
+                "Today's time\ncounter",
                 textAlign: TextAlign.center,
                 style: AppStyles.body2,
               )),

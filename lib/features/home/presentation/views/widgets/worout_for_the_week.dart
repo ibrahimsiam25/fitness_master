@@ -10,7 +10,6 @@ class WoroutForTheWeek extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.all(16.0),
       padding: EdgeInsets.symmetric(horizontal: 12.0.w, vertical: 20.0.h),
       width: 343.0.w,
       decoration: BoxDecoration(
