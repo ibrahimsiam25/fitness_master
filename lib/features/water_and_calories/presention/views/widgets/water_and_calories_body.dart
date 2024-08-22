@@ -1,29 +1,17 @@
-import 'package:fitness_master/features/water_and_calories/presention/views/widgets/custom_date_time.dart';
 import 'package:flutter/material.dart';
-import 'package:svg_flutter/svg_flutter.dart';
-import '../../../../../core/constants/app_assets.dart';
 import 'package:fitness_master/core/constants/const.dart';
 import 'package:fitness_master/core/utils/app_styles.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:fitness_master/core/constants/app_color.dart';
-import 'package:fitness_master/features/water_and_calories/presention/views/widgets/custom_day.dart';
-import 'package:fitness_master/features/water_and_calories/presention/views/widgets/custom_meal_data.dart';
-import 'package:fitness_master/features/water_and_calories/presention/views/widgets/custom_meal_and_water_item.dart';
+import 'package:fitness_master/features/home/presentation/views/widgets/custom_calendar.dart';
+import 'package:fitness_master/features/water_and_calories/presention/views/widgets/custom_date_time.dart';
+import 'package:fitness_master/features/water_and_calories/presention/views/widgets/custom_row_meal_and_water.dart';
 
-class WaterAndCaloriesBody extends StatefulWidget {
+class WaterAndCaloriesBody extends StatelessWidget {
   const WaterAndCaloriesBody({super.key});
 
   @override
-  State<WaterAndCaloriesBody> createState() => _WaterAndCaloriesBodyState();
-}
-
-class _WaterAndCaloriesBodyState extends State<WaterAndCaloriesBody> {
-  int no = 0;
-  List<String> mealAndWaterTextList = ["Add a meal", " Add water\nintake"];
-  List<String> mealAndWaterIconList = [AppAssets.food, AppAssets.water];
-  @override
   Widget build(BuildContext context) {
-    return SafeArea(
+       return SafeArea(
         child: ListView(
       padding: const EdgeInsets.symmetric(horizontal: kHorizontalPadding),
       children: [
@@ -44,44 +32,34 @@ class _WaterAndCaloriesBodyState extends State<WaterAndCaloriesBody> {
         SizedBox(
           height: 24.h,
         ),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: List.generate(
-            2,
-            (index) {
-              return CustomMealAndWaterItem(
-                text: mealAndWaterTextList[index],
-                onTap: () {
-                  setState(() {
-                    no = index;
-                  });
-                },
-                isClicked: index == no,
-                svgPicture: SvgPicture.asset(mealAndWaterIconList[index]),
-              );
-            },
-          ),
-        ),
-        SizedBox(
+      const  CustomRowMealAndWater(),
+      SizedBox(
           height: 24.h,
         ),
-        Container(
-          padding: EdgeInsets.symmetric(horizontal: 16.0.w, vertical: 20.0.h),
-          decoration: BoxDecoration(
-            color: AppColor.black,
-            borderRadius: BorderRadius.circular(14.0.r),
-          ),
-          child: const CustomMeal(
-            name: 'Breakfast',
-            cross: CrossAxisAlignment.center,
-          ),
-        ),
-        SizedBox(
-          height: 24.h,
-        ),
-        const CustomDay(),
-        SizedBox(height: 80.0.h),
+     const  CustomCalendar(isDrobed:true ,),
       ],
     ));
   }
 }
+
+
+
+      // SizedBox(
+      //     height: 24.h,
+      //   ),
+      //   Container(
+      //     padding: EdgeInsets.symmetric(horizontal: 16.0.w, vertical: 20.0.h),
+      //     decoration: BoxDecoration(
+      //       color: AppColor.black,
+      //       borderRadius: BorderRadius.circular(14.0.r),
+      //     ),
+      //     child: const CustomMeal(
+      //       name: 'Breakfast',
+      //       cross: CrossAxisAlignment.center,
+      //     ),
+      //   ),
+      //   SizedBox(
+      //     height: 24.h,
+      //   ),
+      //   const CustomDay(),
+      //   SizedBox(height: 80.0.h),

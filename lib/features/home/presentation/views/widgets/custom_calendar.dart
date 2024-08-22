@@ -6,15 +6,15 @@ import '../../../../../core/constants/app_color.dart';
 import '../../../../../core/constants/app_assets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class CalendarWidget extends StatefulWidget {
+class CustomCalendar extends StatefulWidget {
   final bool isDrobed;
 
-  const CalendarWidget({super.key, this.isDrobed = false});
+  const CustomCalendar({super.key, this.isDrobed = false});
   @override
   CalendarWidgetState createState() => CalendarWidgetState();
 }
 
-class CalendarWidgetState extends State<CalendarWidget> {
+class CalendarWidgetState extends State<CustomCalendar> {
   final Set<DateTime> _selectedDays = {};
 
   @override
@@ -22,6 +22,10 @@ class CalendarWidgetState extends State<CalendarWidget> {
     return Visibility(
       visible: widget.isDrobed,
       child: Container(
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(14.r),
+          color: AppColor.black,
+        ),
         padding: EdgeInsets.only(top: 20.h),
         child: TableCalendar(
           daysOfWeekVisible: false,

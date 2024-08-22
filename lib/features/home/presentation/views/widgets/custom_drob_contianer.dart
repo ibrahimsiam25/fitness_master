@@ -52,7 +52,7 @@ class _CustomDrobContainerState extends State<CustomDrobContainer> {
                   icon: SvgPicture.asset(AppAssets.arrowDown))
             ],
           ),
-          CalendarWidget(isDrobed: isDrobed),
+          CustomCalendar(isDrobed: isDrobed),
         ],
       ),
     );
