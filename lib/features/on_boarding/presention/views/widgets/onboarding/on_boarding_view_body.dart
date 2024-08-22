@@ -1,0 +1,52 @@
+import 'package:flutter/material.dart';
+import 'package:fitness_master/core/constants/app_assets.dart';
+import 'package:fitness_master/features/on_boarding/presention/views/widgets/onboarding/page_view_item.dart';
+
+class OnBoardingViewBody extends StatefulWidget {
+  const OnBoardingViewBody({super.key});
+
+  @override
+  State<OnBoardingViewBody> createState() => _OnBoardingViewBodyState();
+}
+
+class _OnBoardingViewBodyState extends State<OnBoardingViewBody> {
+  late PageController _pageController;
+
+  @override
+  void initState() {
+    super.initState();
+    _pageController = PageController();
+  }
+
+  @override
+  void dispose() {
+    _pageController.dispose();
+    super.dispose();
+  }
+
+  List<String> images = [
+    AppAssets.onBording1,
+    AppAssets.onBording2,
+    AppAssets.onBording3,
+  ];
+  List<String> texts = [
+    'Exercise library',
+    "Progress tracking",
+    "Calorie and water tracking"
+  ];
+  @override
+  Widget build(BuildContext context) {
+    return PageView.builder(
+        physics: const NeverScrollableScrollPhysics(),
+        itemCount: 3,
+        controller: _pageController,
+        itemBuilder: (context, index) {
+          return PageViewItem(
+            image: images[index],
+            text: texts[index],
+            pageController: _pageController,
+            isLastPage: index == images.length - 1,
+          );
+        });
+  }
+}

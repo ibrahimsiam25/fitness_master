@@ -1,9 +1,7 @@
+import 'package:fitness_master/core/utils/app_router.dart';
 import 'package:flutter/material.dart';
+import 'package:fitness_master/core/utils/app_styles.dart';
 import 'package:go_router/go_router.dart';
-import '../../../../../core/utils/app_router.dart';
-import '../../../../../core/utils/app_styles.dart';
-
-
 
 class PremiumRow extends StatelessWidget {
   const PremiumRow({
@@ -21,10 +19,17 @@ class PremiumRow extends StatelessWidget {
           'Premium',
           style: AppStyles.header1,
         ),
- 
-        IconButton(onPressed: (){
-           GoRouter.of(context).push(AppRouter.kExercisesView);
-        }, icon: Icon(Icons.chevron_right))
+        const Spacer(),
+        InkWell(
+          onTap: () {
+            context.go(AppRouter.kExercisesView);
+          },
+          child: const Icon(
+            Icons.clear,
+            color: Colors.white,
+            size: 32,
+          ),
+        ),
       ],
     );
   }
