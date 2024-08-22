@@ -27,7 +27,7 @@ class PageViewItem extends StatelessWidget {
         SizedBox(height: 121.0.h),
         SizedBox(
           width: 343.0.w,
-          height: 80.0.h,
+          height: 95.0.h,
           child: Center(
             child: Text(
               text,
