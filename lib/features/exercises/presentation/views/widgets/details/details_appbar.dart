@@ -16,7 +16,7 @@ class DetailsAppbar extends StatelessWidget {
       children: [
         InkWell(
           onTap: () {
-            context.go(AppRouter.kExercisesView);
+            context.go(AppRouter.kBottomNavigationBar);
           },
           child: const Icon(
             Icons.arrow_back_ios,
