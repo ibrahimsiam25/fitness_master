@@ -5,10 +5,8 @@ import '../../../../../core/constants/app_color.dart';
 import '../../../../../core/constants/app_assets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-
-
-class customDrobContainer extends StatelessWidget {
-  const customDrobContainer({
+class CustomDrobContainer extends StatelessWidget {
+  const CustomDrobContainer({
     super.key,
   });
 
@@ -26,12 +24,18 @@ class customDrobContainer extends StatelessWidget {
             SvgPicture.asset(AppAssets.fireIcon),
             Column(
               children: [
-                Text("Weeks streak",style: AppStyles.body2,),
-                Text("Keep going!",style: AppStyles.body1,),
+                Text(
+                  "Weeks streak",
+                  style: AppStyles.body2,
+                ),
+                Text(
+                  "Keep going!",
+                  style: AppStyles.body1,
+                ),
               ],
-              
             ),
-            IconButton(onPressed: (){}, icon: SvgPicture.asset(AppAssets.arrowDown))
+            IconButton(
+                onPressed: () {}, icon: SvgPicture.asset(AppAssets.arrowDown))
           ],
         ));
   }

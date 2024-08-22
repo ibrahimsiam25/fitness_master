@@ -18,7 +18,7 @@ class HomeViewBody extends StatelessWidget {
           SizedBox(
             height: 24.h,
           ),
-          customDrobContainer(),
+          CustomDrobContainer(),
           Container(
             decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(14.r),
