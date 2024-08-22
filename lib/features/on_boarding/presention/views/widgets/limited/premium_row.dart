@@ -1,7 +1,7 @@
-import 'package:fitness_master/core/utils/app_router.dart';
 import 'package:flutter/material.dart';
-import 'package:fitness_master/core/utils/app_styles.dart';
 import 'package:go_router/go_router.dart';
+import 'package:fitness_master/core/utils/app_router.dart';
+import 'package:fitness_master/core/utils/app_styles.dart';
 
 class PremiumRow extends StatelessWidget {
   const PremiumRow({
@@ -22,7 +22,7 @@ class PremiumRow extends StatelessWidget {
         const Spacer(),
         InkWell(
           onTap: () {
-            context.go(AppRouter.kExercisesView);
+            context.go(AppRouter.kHomeView);
           },
           child: const Icon(
             Icons.clear,
