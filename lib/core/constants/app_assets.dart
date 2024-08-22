@@ -7,6 +7,8 @@ class AppAssets {
   static const editIcon = 'assets/icons/edit_icon.svg';
   static const fireIcon = 'assets/icons/fire.svg';
   static const arrowDown = 'assets/icons/arrow-down-01-round.svg';
+  static const arrowRight = 'assets/icons/arrow_left.svg';
+  static const arrowLeft = 'assets/icons/arrow_right.svg';
   static const image13 = 'assets/images/image 13.png';
   static const image11 = 'assets/images/image 11.png';
   static const image1 = 'assets/images/image 1.png';
