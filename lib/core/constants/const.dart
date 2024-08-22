@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 const String kIsOnBoardingView = 'isOnBoardingView';
 const double kHorizontalPadding = 27.0;
 const kVerticalPadding = 16;
+
 List premiumList = [
   'access to all exercises and articles',
   'the ability to set a goal to exercise\nmore than 4 days a week',
@@ -32,4 +33,3 @@ List settingsTitles = [
   'Support',
   'Restore purchases',
 ];
-
