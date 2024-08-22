@@ -22,7 +22,7 @@ class PremiumRow extends StatelessWidget {
         const Spacer(),
         InkWell(
           onTap: () {
-            context.go(AppRouter.kHomeView);
+            context.go(AppRouter.kBottomNavigationBar);
           },
           child: const Icon(
             Icons.clear,

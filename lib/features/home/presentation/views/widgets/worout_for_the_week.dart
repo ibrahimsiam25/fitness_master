@@ -1,14 +1,14 @@
 import 'package:fitness_master/core/constants/app_color.dart';
-import 'package:fitness_master/core/constants/const.dart';
 import 'package:fitness_master/core/utils/app_styles.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:intl/intl.dart';
 
 class WoroutForTheWeek extends StatelessWidget {
   const WoroutForTheWeek({super.key});
-
   @override
   Widget build(BuildContext context) {
+    DateTime now = DateTime.now();
     return Container(
       padding: EdgeInsets.symmetric(horizontal: 12.0.w, vertical: 20.0.h),
       width: 343.0.w,
@@ -30,8 +30,12 @@ class WoroutForTheWeek extends StatelessWidget {
               7,
               (index) {
                 return WorkOutRowElement(
-                  text: workouts['day'][index],
-                  num: workouts['date'][index],
+                  text: DateFormat('EE').format(
+                    now.add(
+                      Duration(days: index),
+                    ),
+                  ),
+                  num: now.day + index,
                   isFilled: index < 4 ? true : false,
                 );
               },
