@@ -16,6 +16,7 @@ abstract class AppRouter {
   static const kExercisesView = '/exercisesView';
   static const kExercisesDetails = '/exercisesDetails';
   static const kSettings = '/settings';
+  static const kBottomNavigationBar = '/bottomNavigationBar';
   static final router = GoRouter(
     routes: [
       GoRoute(
@@ -45,6 +46,10 @@ abstract class AppRouter {
       GoRoute(
         path: kExercisesDetails,
         builder: (context, state) => const ExerciseDetailsView(),
+      ),
+      GoRoute(
+        path: kBottomNavigationBar,
+        builder: (context, state) => const BottomNavigationBarController(),
       ),
     ],
   );
