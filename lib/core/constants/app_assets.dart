@@ -25,3 +25,5 @@ class AppAssets {
   static const settings = 'assets/icons/Frame 5.svg';
   static const cub = 'assets/icons/Vector.svg';
 }
+
+//
