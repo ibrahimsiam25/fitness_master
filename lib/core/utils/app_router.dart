@@ -1,4 +1,5 @@
 import 'package:go_router/go_router.dart';
+import '../../features/progress/presentation/views/new_progrees_view.dart';
 import 'package:fitness_master/features/home/presentation/views/home_view.dart';
 import 'package:fitness_master/features/on_boarding/presention/views/planning_view.dart';
 import 'package:fitness_master/features/exercises/presentation/views/exercises_view.dart';
@@ -8,6 +9,7 @@ import 'package:fitness_master/features/exercises/presentation/views/exercise_de
 import 'package:fitness_master/features/on_boarding/presention/views/limited_functionality_view.dart';
 import 'package:fitness_master/features/water_and_calories/presention/views/water_and_calories_view.dart';
 
+
 abstract class AppRouter {
   static const kOnBoardingView = '/onBoardingView';
   static const kPlanningView = '/planningView';
@@ -16,6 +18,7 @@ abstract class AppRouter {
   static const kExercisesView = '/exercisesView';
   static const kExercisesDetails = '/exercisesDetails';
   static const kWaterAndCalories = '/waterAndCalories';
+  static const kNewProgrees = '/newProgrees';
   static const kSettings = '/settings';
   static const kBottomNavigationBar = '/bottomNavigationBar';
   static final router = GoRouter(
@@ -47,6 +50,10 @@ abstract class AppRouter {
       GoRoute(
         path: kExercisesDetails,
         builder: (context, state) => const ExerciseDetailsView(),
+      ),
+          GoRoute(
+        path: kNewProgrees,
+        builder: (context, state) => const NewProgreesView(),
       ),
       GoRoute(
           path: kWaterAndCalories,
