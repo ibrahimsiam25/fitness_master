@@ -42,9 +42,6 @@ class NewProgreesViewBody extends StatelessWidget {
       padding: EdgeInsets.symmetric(horizontal: 16.0.w),
       child: Column(
         children: [
-          SizedBox(
-            height: 10.h,
-          ),
           Row(
             children: [
               IconButton(

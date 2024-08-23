@@ -17,51 +17,52 @@ class ExerciseDetailsViewBody extends StatelessWidget {
     Get.lazyPut(() => ExercisesDetailsController());
     return GetBuilder<ExercisesDetailsController>(
       builder: (controller) {
-        return Padding(
-          padding: EdgeInsets.symmetric(horizontal: 16.0.w),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              SizedBox(height: 54.0.h),
-              const DetailsAppbar(),
-              SizedBox(height: 24.0.h),
-              const DetailsMainRow(),
-              SizedBox(height: 24.0.h),
-              Text(
-                'Name of article',
-                style: AppStyles.body2,
-              ),
-              SizedBox(height: 24.0.h),
-              const DetailsImage(),
-              SizedBox(height: 24.0.h),
-              Text(
-                'Lorem ipsum dolor sit amet, consectetur Lorem ipsum dolor sit amet, consectetur Lorem ipsum dolor sit amet, consectetur Lorem ipsum dolor sit amet, consectetur Lorem ipsum dolor sit amet, consectetur Lorem ipsum dolor sit amet, consectetur Lorem ipsum dolor sit amet, consectetur.',
-                style: AppStyles.body4,
-              ),
-              const Spacer(
-                flex: 1,
-              ),
-              Align(
-                child: Text(
-                  controller.formatTime(controller.remainingSeconds),
-                  style: AppStyles.header1,
+        return SafeArea(
+          child: Padding(
+            padding: EdgeInsets.symmetric(horizontal: 16.0.w),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                const DetailsAppbar(),
+                SizedBox(height: 24.0.h),
+                const DetailsMainRow(),
+                SizedBox(height: 24.0.h),
+                Text(
+                  'Name of article',
+                  style: AppStyles.body2,
                 ),
-              ),
-              const Spacer(
-                flex: 1,
-              ),
-              MainButton(
-                onTap: () {
-                  controller.action();
-                },
-                color: AppColor.theme,
-                text: controller.isPlaying == false ? 'Start' : 'Stop',
-                textColor: AppColor.black,
-              ),
-              const Spacer(
-                flex: 6,
-              ),
-            ],
+                SizedBox(height: 24.0.h),
+                const DetailsImage(),
+                SizedBox(height: 24.0.h),
+                Text(
+                  'Lorem ipsum dolor sit amet, consectetur Lorem ipsum dolor sit amet, consectetur Lorem ipsum dolor sit amet, consectetur Lorem ipsum dolor sit amet, consectetur Lorem ipsum dolor sit amet, consectetur Lorem ipsum dolor sit amet, consectetur Lorem ipsum dolor sit amet, consectetur.',
+                  style: AppStyles.body4,
+                ),
+                const Spacer(
+                  flex: 1,
+                ),
+                Align(
+                  child: Text(
+                    controller.formatTime(controller.remainingSeconds),
+                    style: AppStyles.header1,
+                  ),
+                ),
+                const Spacer(
+                  flex: 1,
+                ),
+                MainButton(
+                  onTap: () {
+                    controller.action();
+                  },
+                  color: AppColor.theme,
+                  text: controller.isPlaying == false ? 'Start' : 'Stop',
+                  textColor: AppColor.black,
+                ),
+                const Spacer(
+                  flex: 6,
+                ),
+              ],
+            ),
           ),
         );
       },

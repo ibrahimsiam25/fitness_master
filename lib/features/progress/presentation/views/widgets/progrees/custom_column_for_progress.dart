@@ -2,8 +2,6 @@ import 'package:flutter/material.dart';
 import '../../../../../../core/utils/app_styles.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-
-
 class CustomColumnForProgress extends StatelessWidget {
   const CustomColumnForProgress({
     super.key,
@@ -16,16 +14,18 @@ class CustomColumnForProgress extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 8.0.w),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Image.asset(imagePath),
-          SizedBox(height: 16.h),
-          Text(title, style: AppStyles.body1),
-        ],
-      ),
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Image.asset(
+          width: 109.w,
+          height: 185.0.h,
+          imagePath,
+          fit: BoxFit.fill,
+        ),
+        SizedBox(height: 16.h),
+        Text(title, style: AppStyles.body1),
+      ],
     );
   }
 }

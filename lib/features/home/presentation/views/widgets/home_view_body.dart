@@ -16,11 +16,9 @@ class HomeViewBody extends StatelessWidget {
     return SafeArea(
       child: Padding(
         padding: EdgeInsets.symmetric(horizontal: 16.0.w),
-        child: Column(
+        child: ListView(
+          padding: EdgeInsets.zero,
           children: [
-            SizedBox(
-              height: 10.h,
-            ),
             CustomAppBar(
               title: "Home",
               onPressed: () {
@@ -28,27 +26,20 @@ class HomeViewBody extends StatelessWidget {
               },
               icon: AppAssets.editIcon,
             ),
-            Expanded(
-              child: ListView(
-                padding: EdgeInsets.zero,
-                children: [
-                  SizedBox(
-                    height: 24.h,
-                  ),
-                  const CustomDrobContainer(),
-                  SizedBox(
-                    height: 24.h,
-                  ),
-                  const TodaysTimeCounter(),
-                  SizedBox(
-                    height: 24.h,
-                  ),
-                  const WoroutForTheWeek(),
-                  SizedBox(
-                    height: 88.0.h,
-                  ),
-                ],
-              ),
+            SizedBox(
+              height: 24.h,
+            ),
+            const CustomDrobContainer(),
+            SizedBox(
+              height: 24.h,
+            ),
+            const TodaysTimeCounter(),
+            SizedBox(
+              height: 24.h,
+            ),
+            const WoroutForTheWeek(),
+            SizedBox(
+              height: 88.0.h,
             ),
           ],
         ),

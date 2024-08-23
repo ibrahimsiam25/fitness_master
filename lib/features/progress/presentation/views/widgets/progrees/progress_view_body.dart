@@ -28,12 +28,9 @@ class ProgressViewBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 15.w),
-        child: Column(
+        padding: EdgeInsets.symmetric(horizontal: 16.w),
+        child: ListView(
           children: [
-            SizedBox(
-              height: 10.h,
-            ),
             CustomAppBar(
               title: "Progress",
               icon: AppAssets.pluse,
@@ -41,23 +38,21 @@ class ProgressViewBody extends StatelessWidget {
                 GoRouter.of(context).push(AppRouter.kNewProgrees);
               },
             ),
-            Expanded(
-              child: ListView.builder(
-                itemCount: progressMap.length,
-                itemBuilder: (context, index) {
-                  final category = progressMap.keys.elementAt(index);
-                  final progressData = progressMap[category]!;
-                  return Padding(
-                    padding: index == 1
-                        ? EdgeInsets.only(bottom: 88.0.h)
-                        : EdgeInsets.zero,
-                    child: ProgressCategoryCard(
-                      category: category,
-                      progressData: progressData,
-                    ),
-                  );
-                },
-              ),
+            ...List.generate(
+              progressMap.length,
+              (index) {
+                final category = progressMap.keys.elementAt(index);
+                final progressData = progressMap[category]!;
+                return Padding(
+                  padding: index == 1
+                      ? EdgeInsets.only(bottom: 88.0.h)
+                      : EdgeInsets.zero,
+                  child: ProgressCategoryCard(
+                    category: category,
+                    progressData: progressData,
+                  ),
+                );
+              },
             ),
           ],
         ),
