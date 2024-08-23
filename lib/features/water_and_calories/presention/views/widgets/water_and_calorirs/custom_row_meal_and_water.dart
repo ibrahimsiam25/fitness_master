@@ -29,6 +29,8 @@ class _CustomRowMealAndWaterState extends State<CustomRowMealAndWater> {
                 onTap: () {
                   if(index == 0){
                      GoRouter.of(context).push(AppRouter.kAddMeal);
+                  }else if(index == 1){
+                    GoRouter.of(context).push(AppRouter.kAddWater);
                   }
                 },
               

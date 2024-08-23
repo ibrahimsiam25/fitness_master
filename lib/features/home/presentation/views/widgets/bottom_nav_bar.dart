@@ -7,6 +7,7 @@ import 'package:persistent_bottom_nav_bar/persistent_bottom_nav_bar.dart';
 import 'package:fitness_master/features/home/presentation/views/home_view.dart';
 import 'package:fitness_master/features/settings/presentation/views/settings_view.dart';
 import 'package:fitness_master/features/exercises/presentation/views/exercises_view.dart';
+import 'package:fitness_master/features/water_and_calories/presention/views/add_meal_view.dart';
 import 'package:fitness_master/features/water_and_calories/presention/views/water_and_calories_view.dart';
 // ignore_for_file: deprecated_member_use
 
@@ -43,6 +44,7 @@ class _BottomNavigationBarControllerState
       const Center(child: Text('3.Progress')),
       const WaterAndCaloriesView(),
       const SettingsView(),
+     
     ];
   }
 

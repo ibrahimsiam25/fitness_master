@@ -33,7 +33,7 @@ class CustomDay extends StatelessWidget {
             cross: CrossAxisAlignment.start,
           ),
           SizedBox(height: 24.0.h),
-          const WaterIntake()
+          const WaterIntake(title:  'Water iintake',)
         ],
       ),
     );

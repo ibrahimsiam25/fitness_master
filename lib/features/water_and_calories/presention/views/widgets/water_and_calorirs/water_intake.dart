@@ -1,15 +1,16 @@
-// ignore_for_file: deprecated_member_use
-import 'package:fitness_master/core/constants/app_assets.dart';
-import 'package:fitness_master/core/constants/app_color.dart';
-import 'package:fitness_master/core/utils/app_styles.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:svg_flutter/svg.dart';
+import 'package:flutter/material.dart';
+import 'package:fitness_master/core/utils/app_styles.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:fitness_master/core/constants/app_color.dart';
+import 'package:fitness_master/core/constants/app_assets.dart';
+// ignore_for_file: deprecated_member_use
 
 class WaterIntake extends StatelessWidget {
   const WaterIntake({
-    super.key,
+    super.key, required this.title,
   });
+  final String title;
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +18,7 @@ class WaterIntake extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
-          'Water iintake',
+         title,
           style: AppStyles.body2,
         ),
         SizedBox(height: 16.0.h),

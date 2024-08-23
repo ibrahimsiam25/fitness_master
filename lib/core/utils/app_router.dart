@@ -5,6 +5,7 @@ import 'package:fitness_master/features/exercises/presentation/views/exercises_v
 import 'package:fitness_master/features/on_boarding/presention/views/on_boarding_view.dart';
 import 'package:fitness_master/features/home/presentation/views/widgets/bottom_nav_bar.dart';
 import 'package:fitness_master/features/water_and_calories/presention/views/add_meal_view.dart';
+import 'package:fitness_master/features/water_and_calories/presention/views/add_water_view.dart';
 import 'package:fitness_master/features/exercises/presentation/views/exercise_details_view.dart';
 import 'package:fitness_master/features/on_boarding/presention/views/limited_functionality_view.dart';
 import 'package:fitness_master/features/water_and_calories/presention/views/water_and_calories_view.dart';
@@ -58,9 +59,9 @@ abstract class AppRouter {
       GoRoute(
           path: kAddMeal,
           builder: (context, state) => const AddMealView()),
-      // GoRoute(
-      //     path: kWaterAndCalories,
-      //     builder: (context, state) => const WaterAndCaloriesView()),
+      GoRoute(
+          path: kAddWater,
+          builder: (context, state) => const AddWaterView()),
       GoRoute(
         path: kBottomNavigationBar,
         builder: (context, state) => const BottomNavigationBarController(),
