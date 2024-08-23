@@ -39,16 +39,8 @@ class WaterAndCaloriesBody extends StatelessWidget {
               controller.view == 0
                   ? const CustomRowMealAndWater()
                   : controller.view == 1
-                      ? AddMeal(
-                          onTap: () {
-                            controller.defaultView();
-                          },
-                        )
-                      : AddWater(
-                          onTap: () {
-                            controller.defaultView();
-                          },
-                        ),
+                      ? const AddMeal()
+                      : const AddWater(),
               SizedBox(
                 height: 24.h,
               ),

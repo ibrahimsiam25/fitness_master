@@ -1,13 +1,13 @@
+import 'package:fitness_master/features/exercises/presentation/manager/exercises_controller.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:go_router/go_router.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:fitness_master/core/constants/const.dart';
 import 'package:fitness_master/core/utils/app_router.dart';
 import 'package:fitness_master/core/utils/app_styles.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:fitness_master/core/constants/app_color.dart';
 import 'package:fitness_master/core/constants/app_assets.dart';
-import 'package:fitness_master/features/exercises/presentation/manager/exercises/exercises_cubit.dart';
 
 class ExerciseMainElement extends StatelessWidget {
   const ExerciseMainElement({
@@ -23,8 +23,8 @@ class ExerciseMainElement extends StatelessWidget {
           padding: const EdgeInsets.all(0.0),
           itemCount: 6,
           itemBuilder: (context, index) {
-            return BlocBuilder<ExercisesCubit, int>(
-              builder: (context, state) {
+            return GetBuilder<ExercisesController>(
+              builder: (controller) {
                 return index == 5
                     ? SizedBox(height: 80.0.h)
                     : Padding(
@@ -58,7 +58,8 @@ class ExerciseMainElement extends StatelessWidget {
                                             style: AppStyles.body2,
                                           ),
                                           Text(
-                                            exercises['title'][state],
+                                            exercises['title']
+                                                [controller.currentIndex],
                                             style: AppStyles.body1,
                                           ),
                                         ],

@@ -1,4 +1,6 @@
+import 'package:fitness_master/features/water_and_calories/presention/manager/water_meal_controller.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import '../../../../../core/utils/app_styles.dart';
 import '../../../../../core/constants/app_color.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -6,10 +8,8 @@ import 'package:fitness_master/core/widgets/main_button.dart';
 import 'package:fitness_master/features/water_and_calories/presention/views/widgets/custom_text_and_contianer.dart';
 
 class AddMeal extends StatelessWidget {
-  final void Function()? onTap;
   const AddMeal({
     super.key,
-    this.onTap,
   });
 
   @override
@@ -73,11 +73,17 @@ class AddMeal extends StatelessWidget {
             ],
           ),
           SizedBox(height: 20.h),
-          MainButton(
-            color: AppColor.theme,
-            text: "Save",
-            textColor: AppColor.black,
-            onTap: onTap,
+          GetBuilder<WaterMealController>(
+            builder: (controller) {
+              return MainButton(
+                color: AppColor.theme,
+                text: "Save",
+                textColor: AppColor.black,
+                onTap: () {
+                  controller.defaultView();
+                },
+              );
+            },
           ),
         ],
       ),
