@@ -12,6 +12,7 @@ class AppAssets {
   static const food = 'assets/icons/food.svg';
   static const water = 'assets/icons/soft-drink-02.svg';
   static const progress = 'assets/images/progress.png';
+  static const pluse = 'assets/icons/pluse.svg';
 
   static const image13 = 'assets/images/image 13.png';
   static const image11 = 'assets/images/image 11.png';

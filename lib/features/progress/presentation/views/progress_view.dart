@@ -10,14 +10,7 @@ class ProgressView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: customAppBar(
-          title: "Progress",
-          icon: Icon(
-            Icons.add,
-            color: AppColor.white,
-            size: 24.r,
-          ),
-          onPressed: () {}),
+      
       body: const ProgressViewBody(),
     );
   }

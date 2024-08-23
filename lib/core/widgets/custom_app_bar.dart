@@ -1,29 +1,32 @@
 import '../utils/app_styles.dart';
-import 'package:fitness_master/core/constants/const.dart';
+import 'package:flutter/material.dart';
+import 'package:svg_flutter/svg_flutter.dart';
 
-  import 'package:flutter/material.dart';
 
 
-AppBar customAppBar({
-    required String title,
-    required Widget icon,
-    required void Function()? onPressed,
-  }) {
-    return AppBar(
-       
-      title: Padding(
-        padding: const EdgeInsets.only(left: kHorizontalPadding/2),
-        child: Text(
+class CustomAppBar extends StatelessWidget {
+  const CustomAppBar({
+    super.key, required this.title, this.onPressed,  required this.icon,
+  });
+  final String title;
+  final void Function()? onPressed;
+  final String icon;
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      children: [
+        Text(
           title,
           style: AppStyles.header1,
         ),
-      ),
-      backgroundColor: Colors.transparent,
-      actions: [
-        Padding(
-           padding: const EdgeInsets.only(right: kHorizontalPadding/2),
-          child: IconButton(icon: icon, onPressed: onPressed),
-        ),
+        const Spacer(),
+        InkWell(
+          onTap: onPressed,
+          child: SvgPicture.asset(
+           icon,
+          ),
+        )
       ],
     );
   }
+}

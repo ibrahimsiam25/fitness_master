@@ -21,7 +21,7 @@ class ProgressCategoryCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.symmetric(horizontal: kHorizontalPadding, vertical: 10.h),
+      margin: EdgeInsets.symmetric( vertical: 10.h),
       padding: const EdgeInsets.all(20),
       height: 300.h,
       decoration: BoxDecoration(
