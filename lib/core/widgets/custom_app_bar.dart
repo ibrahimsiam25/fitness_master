@@ -4,7 +4,7 @@ import 'package:fitness_master/core/constants/const.dart';
   import 'package:flutter/material.dart';
 
 
-AppBar cusyomAppBar({
+AppBar customAppBar({
     required String title,
     required Widget icon,
     required void Function()? onPressed,

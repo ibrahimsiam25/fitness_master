@@ -12,7 +12,7 @@ class HomeView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: cusyomAppBar(
+      appBar: customAppBar(
           title: "Home",
           icon: SvgPicture.asset(AppAssets.editIcon),
           onPressed: () {
