@@ -7,6 +7,9 @@ import 'package:fitness_master/core/constants/app_color.dart';
 
 void main() async {
   await ScreenUtil.ensureScreenSize();
+      SystemChrome.setPreferredOrientations([
+    DeviceOrientation.portraitUp,
+  ]);
   await SharedPref.init();
   runApp(const MyApp());
 }
