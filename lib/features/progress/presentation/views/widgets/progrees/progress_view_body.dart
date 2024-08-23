@@ -2,8 +2,12 @@ import 'package:fitness_master/core/utils/app_styles.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:fitness_master/core/constants/app_assets.dart';
+<<<<<<< HEAD:lib/features/progress/presentation/views/widgets/progress_view_body.dart
 import 'package:fitness_master/features/progress/presentation/views/widgets/progress_category_card.dart';
 import 'package:svg_flutter/svg.dart';
+=======
+import 'package:fitness_master/features/progress/presentation/views/widgets/progrees/progress_category_card.dart';
+>>>>>>> e5182bdfc059550b8ef521fb79077ff2f4ba8d15:lib/features/progress/presentation/views/widgets/progrees/progress_view_body.dart
 
 final Map<String, Map<String, String>> progressMap = {
   "Biceps": {

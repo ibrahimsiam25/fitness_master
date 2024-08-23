@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import '../../../../../core/constants/const.dart';
-import '../../../../../core/utils/app_styles.dart';
-import '../../../../../core/constants/app_color.dart';
+import '../../../../../../core/constants/const.dart';
+import '../../../../../../core/utils/app_styles.dart';
+import '../../../../../../core/constants/app_color.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:fitness_master/features/progress/presentation/views/widgets/custom_column_for_progress.dart';
+import 'package:fitness_master/features/progress/presentation/views/widgets/progrees/custom_column_for_progress.dart';
 
 
 
