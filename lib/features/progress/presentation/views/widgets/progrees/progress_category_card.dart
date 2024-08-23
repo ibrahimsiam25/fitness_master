@@ -4,6 +4,7 @@ import '../../../../../../core/constants/app_color.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:fitness_master/features/progress/presentation/views/widgets/progrees/custom_column_for_progress.dart';
 
+
 class ProgressCategoryCard extends StatelessWidget {
   const ProgressCategoryCard({
     super.key,
@@ -18,7 +19,7 @@ class ProgressCategoryCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       margin: EdgeInsets.symmetric(vertical: 10.h),
-      height: 305.h,
+      height: 320.h,
       decoration: BoxDecoration(
         color: AppColor.veryDarkGray,
         borderRadius: BorderRadius.circular(14.0.r),
