@@ -9,9 +9,8 @@ class ProgressView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      
-      body: const ProgressViewBody(),
+    return const Scaffold(
+      body: ProgressViewBody(),
     );
   }
 }
