@@ -26,4 +26,3 @@ class AppAssets {
   static const cub = 'assets/icons/Vector.svg';
 }
 
-//
