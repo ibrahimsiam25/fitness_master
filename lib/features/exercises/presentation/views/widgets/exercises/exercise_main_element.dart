@@ -64,14 +64,21 @@ class ExerciseMainElement extends StatelessWidget {
                                         ],
                                       ),
                                       const Spacer(),
-                                      InkWell(
-                                        onTap: () {},
-                                        child: const Icon(
-                                          Icons.bookmark_border,
-                                          size: 24,
-                                          color: AppColor.white,
-                                        ),
-                                      ),
+                                      GetBuilder<ExercisesController>(
+                                          builder: (controller) {
+                                        return InkWell(
+                                          onTap: () {
+                                            controller.changeSaved();
+                                          },
+                                          child: Icon(
+                                            controller.isSaved
+                                                ? Icons.bookmark
+                                                : Icons.bookmark_border,
+                                            size: 24,
+                                            color: AppColor.white,
+                                          ),
+                                        );
+                                      })
                                     ],
                                   ),
                                   SizedBox(height: 16.0.h),
