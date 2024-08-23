@@ -30,7 +30,7 @@ class TodaysTimeCounter extends StatelessWidget {
               child: CircularPercentIndicator(
             backgroundColor: AppColor.background,
             progressColor: AppColor.theme,
-            percent: 0.40,
+            percent: 0.5,
             circularStrokeCap: CircularStrokeCap.round,
             center: Column(
               mainAxisAlignment: MainAxisAlignment.center,
