@@ -18,7 +18,7 @@ class ProgressView extends StatelessWidget {
             size: 24.r,
           ),
           onPressed: () {}),
-      body: ProgressViewBody(),
+      body: const ProgressViewBody(),
     );
   }
 }
