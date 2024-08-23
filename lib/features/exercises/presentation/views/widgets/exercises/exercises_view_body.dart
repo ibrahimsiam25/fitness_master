@@ -9,23 +9,22 @@ class ExercisesViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.start,
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        SizedBox(height: 54.0.h),
-        Padding(
-          padding: EdgeInsets.only(left: 16.0.w),
-          child: Text(
-            'Exercises',
-            style: AppStyles.header1,
+    return SafeArea(
+      child: ListView(
+        children: [
+          Padding(
+            padding: EdgeInsets.only(left: 16.0.w),
+            child: Text(
+              'Exercises',
+              style: AppStyles.header1,
+            ),
           ),
-        ),
-        SizedBox(height: 24.0.h),
-        const ExercisesTapbar(),
-        SizedBox(height: 24.0.h),
-        const ExerciseMainElement(),
-      ],
+          SizedBox(height: 24.0.h),
+          const ExercisesTapbar(),
+          SizedBox(height: 24.0.h),
+          const ExerciseMainElement(),
+        ],
+      ),
     );
   }
 }

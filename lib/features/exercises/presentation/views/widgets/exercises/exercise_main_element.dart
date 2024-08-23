@@ -16,13 +16,12 @@ class ExerciseMainElement extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Expanded(
-      child: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 16.0.w),
-        child: ListView.builder(
-          padding: const EdgeInsets.all(0.0),
-          itemCount: 6,
-          itemBuilder: (context, index) {
+    return Padding(
+      padding: EdgeInsets.symmetric(horizontal: 16.0.w),
+      child: Column(
+        children: List.generate(
+          6,
+          (index) {
             return GetBuilder<ExercisesController>(
               builder: (controller) {
                 return index == 5
@@ -65,14 +64,21 @@ class ExerciseMainElement extends StatelessWidget {
                                         ],
                                       ),
                                       const Spacer(),
-                                      InkWell(
-                                        onTap: () {},
-                                        child: const Icon(
-                                          Icons.bookmark_border,
-                                          size: 24,
-                                          color: AppColor.white,
-                                        ),
-                                      ),
+                                      GetBuilder<ExercisesController>(
+                                          builder: (controller) {
+                                        return InkWell(
+                                          onTap: () {
+                                            controller.changeSaved();
+                                          },
+                                          child: Icon(
+                                            controller.isSaved
+                                                ? Icons.bookmark
+                                                : Icons.bookmark_border,
+                                            size: 24,
+                                            color: AppColor.white,
+                                          ),
+                                        );
+                                      })
                                     ],
                                   ),
                                   SizedBox(height: 16.0.h),

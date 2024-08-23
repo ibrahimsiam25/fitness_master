@@ -4,17 +4,16 @@ import '../../../../../../core/utils/app_styles.dart';
 import '../../../../../../core/constants/app_color.dart';
 import '../../../../../../core/constants/app_assets.dart';
 
-
 class CustomDropdownList extends StatefulWidget {
   final List<String> list;
 
   const CustomDropdownList({super.key, required this.list});
 
   @override
-  _CustomDropdownListState createState() => _CustomDropdownListState();
+  CustomDropdownListState createState() => CustomDropdownListState();
 }
 
-class _CustomDropdownListState extends State<CustomDropdownList> {
+class CustomDropdownListState extends State<CustomDropdownList> {
   String? selectedMuscle;
 
   @override
@@ -27,7 +26,7 @@ class _CustomDropdownListState extends State<CustomDropdownList> {
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
-      padding: EdgeInsets.symmetric(horizontal: 20.0, vertical: 14.0),
+      padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 14.0),
       decoration: BoxDecoration(
         color: AppColor.veryDarkGray, // Set the background color
         borderRadius: BorderRadius.circular(10.0), // Rounded corners
@@ -36,7 +35,7 @@ class _CustomDropdownListState extends State<CustomDropdownList> {
         value: selectedMuscle,
         icon: SvgPicture.asset(AppAssets.arrowDown),
         iconSize: 24,
-        underline: SizedBox(), // Remove the underline
+        underline: const SizedBox(), // Remove the underline
         onChanged: (String? newValue) {
           setState(() {
             selectedMuscle = newValue!;
@@ -52,7 +51,7 @@ class _CustomDropdownListState extends State<CustomDropdownList> {
                   value,
                   style: AppStyles.body400_14, // Set text color
                 ),
-                SizedBox(width: 8), // Space between text and icon
+                const SizedBox(width: 8), // Space between text and icon
               ],
             );
           }).toList();

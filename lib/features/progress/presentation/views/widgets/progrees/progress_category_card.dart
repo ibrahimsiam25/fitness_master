@@ -18,8 +18,7 @@ class ProgressCategoryCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       margin: EdgeInsets.symmetric(vertical: 10.h),
-      padding: const EdgeInsets.all(20),
-      height: 300.h,
+      height: 305.h,
       decoration: BoxDecoration(
         color: AppColor.veryDarkGray,
         borderRadius: BorderRadius.circular(14.0.r),
@@ -27,8 +26,10 @@ class ProgressCategoryCard extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(category, style: AppStyles.body2),
-          SizedBox(height: 16.h),
+          Padding(
+            padding: const EdgeInsets.all(20.0),
+            child: Text(category, style: AppStyles.body2),
+          ),
           Expanded(
             child: ListView.builder(
               scrollDirection: Axis.horizontal,
@@ -36,13 +37,19 @@ class ProgressCategoryCard extends StatelessWidget {
               itemBuilder: (context, index) {
                 final month = progressData.keys.elementAt(index);
                 final imagePath = progressData.values.elementAt(index);
-                return CustomColumnForProgress(
-                  title: month,
-                  imagePath: imagePath,
+                return Padding(
+                  padding: EdgeInsets.only(
+                      left: 20.0.w,
+                      right: index == progressData.length - 1 ? 20.0.w : 0),
+                  child: CustomColumnForProgress(
+                    title: month,
+                    imagePath: imagePath,
+                  ),
                 );
               },
             ),
           ),
+          SizedBox(height: 20.h),
         ],
       ),
     );

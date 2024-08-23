@@ -13,35 +13,36 @@ class SettingsViewBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: 16.0.w),
-      child: Column(
-        children: [
-          SizedBox(height: 78.0.h),
-          Align(
-            alignment: Alignment.centerLeft,
-            child: Text(
-              'Settings',
-              style: AppStyles.header1,
+      child: SafeArea(
+        child: Column(
+          children: [
+            Align(
+              alignment: Alignment.centerLeft,
+              child: Text(
+                'Settings',
+                style: AppStyles.header1,
+              ),
             ),
-          ),
-          SizedBox(height: 24.0.h),
-          ...List.generate(
-            4,
-            (index) {
-              return Padding(
-                padding: EdgeInsets.only(bottom: index != 3 ? 16.0.h : 0.0.h),
-                child: SettingsMainElement(
-                  title: settingsTitles[index],
-                ),
-              );
-            },
-          ),
-          SizedBox(height: 24.0.h),
-          const MainButton(
-            color: AppColor.theme,
-            textColor: AppColor.black,
-            text: 'Buy premium for \$0,99',
-          ),
-        ],
+            SizedBox(height: 24.0.h),
+            ...List.generate(
+              4,
+              (index) {
+                return Padding(
+                  padding: EdgeInsets.only(bottom: index != 3 ? 16.0.h : 0.0.h),
+                  child: SettingsMainElement(
+                    title: settingsTitles[index],
+                  ),
+                );
+              },
+            ),
+            SizedBox(height: 24.0.h),
+            const MainButton(
+              color: AppColor.theme,
+              textColor: AppColor.black,
+              text: 'Buy premium for \$0,99',
+            ),
+          ],
+        ),
       ),
     );
   }
