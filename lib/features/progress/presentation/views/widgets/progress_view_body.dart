@@ -1,14 +1,21 @@
 import 'package:flutter/material.dart';
-import '../../../../../core/utils/app_styles.dart';
-import '../../../../../core/constants/app_color.dart';
-import 'package:fitness_master/core/constants/const.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:fitness_master/core/constants/app_assets.dart';
+import 'package:fitness_master/features/progress/presentation/views/widgets/progress_category_card.dart';
 
-Map<String, String> progresMap = {
-  "April": AppAssets.progress,
-  "May": AppAssets.progress,
-  "June": AppAssets.progress,
+final Map<String, Map<String, String>> progressMap = {
+  "Biceps": {
+    "April": AppAssets.progress,
+    "May": AppAssets.progress,
+    "June": AppAssets.progress,
+    "August": AppAssets.progress,
+  },
+  "Abdomen": {
+    "April": AppAssets.progress,
+    "May": AppAssets.progress,
+    "June": AppAssets.progress,
+    "August": AppAssets.progress,
+  },
 };
 
 class ProgressViewBody extends StatelessWidget {
@@ -16,64 +23,18 @@ class ProgressViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      margin: const EdgeInsets.symmetric(horizontal: kHorizontalPadding),
-      padding: const EdgeInsets.all(20),
-      height: 300.h,
-      decoration: BoxDecoration(
-        color: AppColor.veryDarkGray,
-        borderRadius: BorderRadius.circular(14.0.r),
-      ),
-      child: Column(
-        children: [
-          Align(
-              alignment: Alignment.centerLeft,
-              child: Text(
-                "Biceps",
-                style: AppStyles.body2,
-                textAlign: TextAlign.start,
-              )),
-          SizedBox(height: 16.h),
-          Expanded(
-            child: ListView.builder(
-              scrollDirection: Axis.horizontal,
-              itemCount: progresMap.length,
-              itemBuilder: (context, index) {
-                // Return the CustomColumnForProgress widget
-                return CustomColumnForProgress(
-                  imagePath: progresMap.values.elementAt(index),
-                  title: progresMap.keys.elementAt(index),
-                );
-              },
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-}
-
-class CustomColumnForProgress extends StatelessWidget {
-  const CustomColumnForProgress({
-    super.key,
-    required this.title,
-    required this.imagePath,
-  });
-
-  final String title;
-  final String imagePath;
-
-  @override
-  Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 8.0),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Image.asset(imagePath),
-          SizedBox(height: 16.h),
-          Text(title, style: AppStyles.body1),
-        ],
+      padding: EdgeInsets.symmetric(vertical: 14.h),
+      child: ListView.builder(
+        itemCount: progressMap.length,
+        itemBuilder: (context, index) {
+          final category = progressMap.keys.elementAt(index);
+          final progressData = progressMap[category]!;
+          return ProgressCategoryCard(
+            category: category,
+            progressData: progressData,
+          );
+        },
       ),
     );
   }
