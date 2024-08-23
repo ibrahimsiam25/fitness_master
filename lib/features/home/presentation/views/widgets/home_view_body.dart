@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import '../../../../../core/constants/const.dart';
 import '../../../../../core/widgets/custom_app_bar.dart';
 import 'package:fitness_master/core/utils/app_router.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:fitness_master/core/constants/app_assets.dart';
+import '../../../../../core/service/shared_preferences_singleton.dart';
 import 'package:fitness_master/features/home/presentation/views/widgets/worout_for_the_week.dart';
 import 'package:fitness_master/features/home/presentation/views/widgets/todays_time_counter.dart';
 import 'package:fitness_master/features/home/presentation/views/widgets/custom_drob_contianer.dart';
@@ -13,6 +15,7 @@ class HomeViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    SharedPref.setBool(kIsOnBoardingView,true);
     return SafeArea(
       child: Padding(
         padding: EdgeInsets.symmetric(horizontal: 16.0.w),
@@ -47,3 +50,4 @@ class HomeViewBody extends StatelessWidget {
     );
   }
 }
+

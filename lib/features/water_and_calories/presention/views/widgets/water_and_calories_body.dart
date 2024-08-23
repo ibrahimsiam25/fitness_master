@@ -1,16 +1,16 @@
-import 'package:fitness_master/core/constants/app_color.dart';
-import 'package:fitness_master/features/water_and_calories/presention/manager/water_meal_controller.dart';
-import 'package:fitness_master/features/water_and_calories/presention/views/widgets/add_meal.dart';
-import 'package:fitness_master/features/water_and_calories/presention/views/widgets/add_water.dart';
-import 'package:fitness_master/features/water_and_calories/presention/views/widgets/custom_day.dart';
-import 'package:fitness_master/features/water_and_calories/presention/views/widgets/custom_meal_data.dart';
-import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:flutter/material.dart';
 import 'custom_row_meal_and_water.dart';
 import 'water_and_calories_intake_text.dart';
 import 'package:fitness_master/core/constants/const.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:fitness_master/core/constants/app_color.dart';
 import 'package:fitness_master/features/home/presentation/views/widgets/custom_calendar.dart';
+import 'package:fitness_master/features/water_and_calories/presention/views/widgets/add_meal.dart';
+import 'package:fitness_master/features/water_and_calories/presention/views/widgets/add_water.dart';
+import 'package:fitness_master/features/water_and_calories/presention/views/widgets/custom_day.dart';
+import 'package:fitness_master/features/water_and_calories/presention/manager/water_meal_controller.dart';
+import 'package:fitness_master/features/water_and_calories/presention/views/widgets/custom_meal_data.dart';
 import 'package:fitness_master/features/water_and_calories/presention/views/widgets/custom_date_time.dart';
 
 class WaterAndCaloriesBody extends StatelessWidget {
@@ -18,7 +18,7 @@ class WaterAndCaloriesBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Get.put(WaterMealController());
+  
     return SafeArea(
       child: GetBuilder<WaterMealController>(
         builder: (controller) {

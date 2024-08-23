@@ -7,6 +7,8 @@ import 'package:fitness_master/core/utils/app_styles.dart';
 import 'package:fitness_master/core/constants/app_assets.dart';
 import '../../../../../core/service/shared_preferences_singleton.dart';
 
+
+
 class SplashViewBody extends StatefulWidget {
   const SplashViewBody({super.key});
 
@@ -30,7 +32,7 @@ class _SplashViewBodyState extends State<SplashViewBody> {
         Text(
           "Fitness Master",
           style: AppStyles.header1,
-        )
+        ),
       ],
     );
   }
@@ -39,9 +41,9 @@ class _SplashViewBodyState extends State<SplashViewBody> {
     bool isOnBoardingView = SharedPref.getBool(kIsOnBoardingView);
     Future.delayed(const Duration(seconds: 3), () {
       if (isOnBoardingView) {
+        context.go(AppRouter.kBottomNavigationBar);
       } else {
-        // ignore: use_build_context_synchronously
-        context.go(AppRouter.kOnBoardingView);
+       context.go(AppRouter.kOnBoardingView);
       }
     });
   }

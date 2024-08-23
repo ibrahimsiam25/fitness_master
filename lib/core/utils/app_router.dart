@@ -1,6 +1,7 @@
 import 'package:go_router/go_router.dart';
 import '../../features/progress/presentation/views/new_progrees_view.dart';
 import 'package:fitness_master/features/home/presentation/views/home_view.dart';
+import 'package:fitness_master/features/splash/presention/views/splash_view.dart';
 import 'package:fitness_master/features/on_boarding/presention/views/planning_view.dart';
 import 'package:fitness_master/features/exercises/presentation/views/exercises_view.dart';
 import 'package:fitness_master/features/on_boarding/presention/views/on_boarding_view.dart';
@@ -25,7 +26,7 @@ abstract class AppRouter {
     routes: [
       GoRoute(
         path: '/',
-        builder: (context, state) => const BottomNavigationBarController(),
+        builder: (context, state) => const SplashView(),
       ),
       GoRoute(
         path: kOnBoardingView,

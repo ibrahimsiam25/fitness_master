@@ -1,13 +1,15 @@
+import 'package:get/get.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'core/service/shared_preferences_singleton.dart';
+import 'package:fitness_master/core/utils/bindings.dart';
 import 'package:fitness_master/core/utils/app_router.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:fitness_master/core/constants/app_color.dart';
 
 void main() async {
   await ScreenUtil.ensureScreenSize();
-      SystemChrome.setPreferredOrientations([
+  SystemChrome.setPreferredOrientations([
     DeviceOrientation.portraitUp,
   ]);
   await SharedPref.init();
@@ -30,9 +32,12 @@ class MyApp extends StatelessWidget {
             statusBarColor: Colors.transparent,
           ),
         );
-        return MaterialApp.router(
+        return GetMaterialApp.router(
           debugShowCheckedModeBanner: false,
-          routerConfig: AppRouter.router,
+          initialBinding: bindings(),
+          routerDelegate: AppRouter.router.routerDelegate,
+          routeInformationParser: AppRouter.router.routeInformationParser,
+          routeInformationProvider: AppRouter.router.routeInformationProvider,
           theme: ThemeData(
             fontFamily: 'Roboto',
             scaffoldBackgroundColor: AppColor.background,
