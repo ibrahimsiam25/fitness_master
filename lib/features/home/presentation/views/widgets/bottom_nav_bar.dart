@@ -50,49 +50,38 @@ class _BottomNavigationBarControllerState
     return [
       PersistentBottomNavBarItem(
         icon: _selectedIndex == 0
-            ? CustomSelectedIcon(
-                child: SvgPicture.asset(
-                  AppAssets.home,
-                  color: AppColor.black,
-                ),
+            ? const CustomSelectedIcon(
+                asset: AppAssets.home,
               )
-            : SvgPicture.asset(AppAssets.home),
+            : SvgPicture.asset(
+                AppAssets.home,
+              ),
       ),
       PersistentBottomNavBarItem(
         icon: _selectedIndex == 1
-            ? CustomSelectedIcon(
-                child: SvgPicture.asset(
-                AppAssets.exercise,
-                color: AppColor.black,
-              ))
+            ? const CustomSelectedIcon(
+                asset: AppAssets.exercise,
+              )
             : SvgPicture.asset(AppAssets.exercise),
       ),
       PersistentBottomNavBarItem(
         icon: _selectedIndex == 2
-            ? CustomSelectedIcon(
-                child: SvgPicture.asset(
-                  AppAssets.elements,
-                  color: AppColor.black,
-                ),
+            ? const CustomSelectedIcon(
+                asset: AppAssets.elements,
               )
             : SvgPicture.asset(AppAssets.elements),
       ),
       PersistentBottomNavBarItem(
         icon: _selectedIndex == 3
-            ? CustomSelectedIcon(
-                child: SvgPicture.asset(
-                AppAssets.chart,
-                color: AppColor.black,
-              ))
+            ? const CustomSelectedIcon(
+                asset: AppAssets.chart,
+              )
             : SvgPicture.asset(AppAssets.chart),
       ),
       PersistentBottomNavBarItem(
         icon: _selectedIndex == 4
-            ? CustomSelectedIcon(
-                child: SvgPicture.asset(
-                  AppAssets.settings,
-                  color: AppColor.black,
-                ),
+            ? const CustomSelectedIcon(
+                asset: AppAssets.settings,
               )
             : SvgPicture.asset(AppAssets.settings),
       ),
@@ -127,10 +116,10 @@ class _BottomNavigationBarControllerState
 class CustomSelectedIcon extends StatelessWidget {
   const CustomSelectedIcon({
     super.key,
-    required this.child,
+    required this.asset,
   });
 
-  final Widget child;
+  final String asset;
 
   @override
   Widget build(BuildContext context) {
@@ -143,7 +132,12 @@ class CustomSelectedIcon extends StatelessWidget {
         borderRadius: BorderRadius.circular(50),
         color: AppColor.theme,
       ),
-      child: child,
+      child: SvgPicture.asset(
+        asset,
+        width: 24,
+        height: 24,
+        color: AppColor.black,
+      ),
     );
   }
 }
