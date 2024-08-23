@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:svg_flutter/svg_flutter.dart';
 import '../../../../../../core/utils/app_styles.dart';
@@ -8,30 +7,30 @@ import 'package:fitness_master/core/constants/app_color.dart';
 import 'package:fitness_master/core/constants/app_assets.dart';
 import 'package:fitness_master/features/progress/presentation/views/widgets/new_progrees/custom_dropd_down_list.dart';
 
-  final List<String> muscles = [
-    'Biceps',
-    'Triceps',
-    'Chest',
-    'Back',
-    'Legs',
-    'Shoulders',
-    'Abs',
-  ];
+final List<String> muscles = [
+  'Biceps',
+  'Triceps',
+  'Chest',
+  'Back',
+  'Legs',
+  'Shoulders',
+  'Abs',
+];
 
-  final List<String> months = [
-    'January',
-    'February',
-    'March',
-    'April',
-    'May',
-    'June',
-    'July',
-    'August',
-    'September',
-    'October',
-    'November',
-    'December',
-  ];
+final List<String> months = [
+  'January',
+  'February',
+  'March',
+  'April',
+  'May',
+  'June',
+  'July',
+  'August',
+  'September',
+  'October',
+  'November',
+  'December',
+];
 
 class NewProgreesViewBody extends StatelessWidget {
   const NewProgreesViewBody({super.key});
@@ -43,7 +42,9 @@ class NewProgreesViewBody extends StatelessWidget {
       padding: EdgeInsets.symmetric(horizontal: 16.0.w),
       child: Column(
         children: [
-          SizedBox( height: 10.h,),
+          SizedBox(
+            height: 10.h,
+          ),
           Row(
             children: [
               IconButton(
@@ -55,13 +56,20 @@ class NewProgreesViewBody extends StatelessWidget {
                     Icons.arrow_back_ios,
                     color: AppColor.white,
                   )),
-                  SizedBox(width: 16.0.w,),
-                  Text("New Progress",style: AppStyles.header1,),
+              SizedBox(
+                width: 16.0.w,
+              ),
+              Text(
+                "New Progress",
+                style: AppStyles.header1,
+              ),
             ],
           ),
-          SizedBox( height: 24.h,),
+          SizedBox(
+            height: 24.h,
+          ),
           GestureDetector(
-            onTap: (){},
+            onTap: () {},
             child: Container(
               width: 140.w,
               height: 230.h,
@@ -69,28 +77,46 @@ class NewProgreesViewBody extends StatelessWidget {
                 borderRadius: BorderRadius.circular(40.0.r),
                 color: AppColor.veryDarkGray,
               ),
-              child:  Center(
-    child: SvgPicture.asset(
-      AppAssets.addImage,
-      fit: BoxFit.contain, 
-      width: 45,          
-      height: 45,          
-    ),
-  ),
+              child: Center(
+                child: SvgPicture.asset(
+                  AppAssets.addImage,
+                  fit: BoxFit.contain,
+                  width: 45,
+                  height: 45,
+                ),
+              ),
             ),
           ),
-          SizedBox( height: 24.h,),
+          SizedBox(
+            height: 24.h,
+          ),
           Align(
-            alignment: Alignment.centerLeft,
-            child: Text("Category",style: AppStyles.body1,)),
-            SizedBox( height: 12.h,),
-          CustomDropdownList(list: muscles,),
-           SizedBox( height: 24.h,),
+              alignment: Alignment.centerLeft,
+              child: Text(
+                "Category",
+                style: AppStyles.body1,
+              )),
+          SizedBox(
+            height: 12.h,
+          ),
+          CustomDropdownList(
+            list: muscles,
+          ),
+          SizedBox(
+            height: 24.h,
+          ),
           Align(
-            alignment: Alignment.centerLeft,
-            child: Text("Month",style: AppStyles.body1,)),
-            SizedBox( height: 12.h,),
-          CustomDropdownList(list: months,)
+              alignment: Alignment.centerLeft,
+              child: Text(
+                "Month",
+                style: AppStyles.body1,
+              )),
+          SizedBox(
+            height: 12.h,
+          ),
+          CustomDropdownList(
+            list: months,
+          )
         ],
       ),
     ));
