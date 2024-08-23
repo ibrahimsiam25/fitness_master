@@ -1,6 +1,9 @@
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 const String kIsOnBoardingView = 'isOnBoardingView';
+const String kPlanningGoal = 'planningGoal';
+const String kNoOfDaysForPlanning = 'noOfDaysForPlanning';
+const String kNoOfMinsForPlanning = 'noOfMinsForPlanning';
 const double kHorizontalPadding = 16.0;
 const kVerticalPadding = 16;
 

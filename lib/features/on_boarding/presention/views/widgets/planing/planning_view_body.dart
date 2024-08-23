@@ -4,18 +4,12 @@ import '../../../../../../core/utils/app_router.dart';
 import 'package:fitness_master/core/constants/const.dart';
 import 'package:fitness_master/core/utils/app_styles.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:fitness_master/features/on_boarding/presention/views/widgets/onboarding/custom_button.dart';
 import 'package:fitness_master/features/on_boarding/presention/views/widgets/planing/custom_row_goal.dart';
+import 'package:fitness_master/features/on_boarding/presention/views/widgets/onboarding/custom_button.dart';
 import 'package:fitness_master/features/on_boarding/presention/views/widgets/planing/custom_row_for_min_and_day.dart';
-
-class PlanningViewBody extends StatefulWidget {
+class PlanningViewBody extends StatelessWidget {
   const PlanningViewBody({super.key});
 
-  @override
-  State<PlanningViewBody> createState() => _PlanningViewBodyState();
-}
-
-class _PlanningViewBodyState extends State<PlanningViewBody> {
   @override
   Widget build(BuildContext context) {
     return Padding(
