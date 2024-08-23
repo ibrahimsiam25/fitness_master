@@ -32,12 +32,11 @@ class MyApp extends StatelessWidget {
             statusBarColor: Colors.transparent,
           ),
         );
-        return GetMaterialApp.router(
+        return GetMaterialApp(
           debugShowCheckedModeBanner: false,
           initialBinding: MyBindings(),
-          routerDelegate: AppRouter.router.routerDelegate,
-          routeInformationParser: AppRouter.router.routeInformationParser,
-          routeInformationProvider: AppRouter.router.routeInformationProvider,
+          initialRoute: AppRouter.kSplashView,
+          getPages: AppRouter.routes,
           theme: ThemeData(
             fontFamily: 'Roboto',
             scaffoldBackgroundColor: AppColor.background,

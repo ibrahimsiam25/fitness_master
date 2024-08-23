@@ -1,7 +1,8 @@
-import 'package:go_router/go_router.dart';
+import 'package:get/get.dart';
+import '../../features/splash/presention/views/splash_view.dart';
+import '../../features/settings/presentation/views/settings_view.dart';
 import '../../features/progress/presentation/views/new_progrees_view.dart';
 import 'package:fitness_master/features/home/presentation/views/home_view.dart';
-import 'package:fitness_master/features/splash/presention/views/splash_view.dart';
 import 'package:fitness_master/features/on_boarding/presention/views/planning_view.dart';
 import 'package:fitness_master/features/exercises/presentation/views/exercises_view.dart';
 import 'package:fitness_master/features/on_boarding/presention/views/on_boarding_view.dart';
@@ -11,7 +12,10 @@ import 'package:fitness_master/features/on_boarding/presention/views/limited_fun
 import 'package:fitness_master/features/water_and_calories/presention/views/water_and_calories_view.dart';
 
 
-abstract class AppRouter {
+
+
+ class AppRouter {
+  static const String kSplashView = '/splashView';
   static const kOnBoardingView = '/onBoardingView';
   static const kPlanningView = '/planningView';
   static const kLimitedFunctionality = '/limitedFunctionality';
@@ -22,47 +26,51 @@ abstract class AppRouter {
   static const kNewProgrees = '/newProgrees';
   static const kSettings = '/settings';
   static const kBottomNavigationBar = '/bottomNavigationBar';
-  static final router = GoRouter(
-    routes: [
-      GoRoute(
-        path: '/',
-        builder: (context, state) => const SplashView(),
-      ),
-      GoRoute(
-        path: kOnBoardingView,
-        builder: (context, state) => const OnBoardingView(),
-      ),
-      GoRoute(
-        path: kPlanningView,
-        builder: (context, state) => const PlanningView(),
-      ),
-      GoRoute(
-        path: kLimitedFunctionality,
-        builder: (context, state) => const LimitedFunctionalityView(),
-      ),
-      GoRoute(
-        path: kHomeView,
-        builder: (context, state) => const HomeView(),
-      ),
-      GoRoute(
-        path: kExercisesView,
-        builder: (context, state) => const ExercisesView(),
-      ),
-      GoRoute(
-        path: kExercisesDetails,
-        builder: (context, state) => const ExerciseDetailsView(),
-      ),
-          GoRoute(
-        path: kNewProgrees,
-        builder: (context, state) => const NewProgreesView(),
-      ),
-      GoRoute(
-          path: kWaterAndCalories,
-          builder: (context, state) => const WaterAndCaloriesView()),
-      GoRoute(
-        path: kBottomNavigationBar,
-        builder: (context, state) => const BottomNavigationBarController(),
-      ),
-    ],
-  );
+ 
+  static final routes = [
+     GetPage(
+      name: kSplashView,
+      page: () => const SplashView(),
+    ),
+    GetPage(
+      name: kOnBoardingView,
+      page: () => const OnBoardingView(),
+    ),
+    GetPage(
+      name: kPlanningView,
+      page: () => const PlanningView(),
+    ),
+    GetPage(
+      name: kLimitedFunctionality,
+      page: () => const LimitedFunctionalityView(),
+    ),
+    GetPage(
+      name: kHomeView,
+      page: () => const HomeView(),
+    ),
+    GetPage(
+      name: kExercisesView,
+      page: () => const ExercisesView(),
+    ),
+    GetPage(
+      name: kExercisesDetails,
+      page: () => const ExerciseDetailsView(),
+    ),
+    GetPage(
+      name: kWaterAndCalories,
+      page: () => const WaterAndCaloriesView(),
+    ),
+    GetPage(
+      name:   kNewProgrees,
+      page: () => const NewProgreesView(),
+    ),
+    GetPage(
+      name: kSettings,
+      page: () => const SettingsView(),
+    ),
+    GetPage(
+      name: kBottomNavigationBar,
+      page: () => const BottomNavigationBarController(),
+    ),
+  ];
 }

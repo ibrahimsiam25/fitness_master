@@ -1,5 +1,5 @@
+import 'package:get/get.dart';
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
 import 'package:svg_flutter/svg_flutter.dart';
 import '../../../../../../core/utils/app_router.dart';
 import '../../../../../../core/utils/app_styles.dart';
@@ -40,7 +40,9 @@ class PageViewItem extends StatelessWidget {
         TextButton(
           onPressed: () {
             if (isLastPage) {
-              context.go(AppRouter.kPlanningView);
+              Get.offAllNamed(AppRouter.kPlanningView);
+
+              
             } else {
               // Move to the next page
               pageController.nextPage(

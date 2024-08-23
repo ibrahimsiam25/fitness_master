@@ -1,13 +1,13 @@
-import 'package:fitness_master/features/exercises/presentation/manager/exercises_controller.dart';
-import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:go_router/go_router.dart';
+import 'package:flutter/material.dart';
 import 'package:fitness_master/core/constants/const.dart';
 import 'package:fitness_master/core/utils/app_router.dart';
 import 'package:fitness_master/core/utils/app_styles.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:fitness_master/core/constants/app_color.dart';
 import 'package:fitness_master/core/constants/app_assets.dart';
+import 'package:fitness_master/features/exercises/presentation/manager/exercises_controller.dart';
+
 
 class ExerciseMainElement extends StatelessWidget {
   const ExerciseMainElement({
@@ -30,8 +30,8 @@ class ExerciseMainElement extends StatelessWidget {
                         padding: EdgeInsets.only(bottom: 12.0.h),
                         child: InkWell(
                           onTap: () {
-                            GoRouter.of(context)
-                                .push(AppRouter.kExercisesDetails);
+                            Get.toNamed(AppRouter.kExercisesDetails);
+                            
                           },
                           borderRadius: BorderRadius.circular(23.0.r),
                           child: Container(

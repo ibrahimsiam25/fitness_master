@@ -1,5 +1,5 @@
+import 'package:get/get.dart';
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
 import '../../../../../core/constants/const.dart';
 import '../../../../../core/widgets/custom_app_bar.dart';
 import 'package:fitness_master/core/utils/app_router.dart';
@@ -25,7 +25,8 @@ class HomeViewBody extends StatelessWidget {
             CustomAppBar(
               title: "Home",
               onPressed: () {
-                GoRouter.of(context).push(AppRouter.kPlanningView);
+                 Get.toNamed(AppRouter.kPlanningView);
+                
               },
               icon: AppAssets.editIcon,
             ),

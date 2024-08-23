@@ -1,11 +1,12 @@
+import 'package:get/get.dart';
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
 import 'package:svg_flutter/svg_flutter.dart';
 import '../../../../../../core/utils/app_styles.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:fitness_master/core/constants/app_color.dart';
 import 'package:fitness_master/core/constants/app_assets.dart';
 import 'package:fitness_master/features/progress/presentation/views/widgets/new_progrees/custom_dropd_down_list.dart';
+
 
 final List<String> muscles = [
   'Biceps',
@@ -46,7 +47,8 @@ class NewProgreesViewBody extends StatelessWidget {
             children: [
               IconButton(
                   onPressed: () {
-                    GoRouter.of(context).pop();
+                    Get.back();
+                  
                   },
                   icon: Icon(
                     size: 30.0.r,

@@ -1,5 +1,5 @@
+import 'package:get/get.dart';
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
 import '../../../../../../core/utils/app_router.dart';
 import 'package:fitness_master/core/constants/const.dart';
 import 'package:fitness_master/core/utils/app_styles.dart';
@@ -39,7 +39,8 @@ class PlanningViewBody extends StatelessWidget {
           const Spacer(),
           CustomButton(
             onTap: () {
-              GoRouter.of(context).push(AppRouter.kLimitedFunctionality);
+              Get.toNamed(AppRouter.kLimitedFunctionality);
+              
             },
           ),
           const Spacer(),

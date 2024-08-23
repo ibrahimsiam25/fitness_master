@@ -1,5 +1,5 @@
+import 'package:get/get.dart';
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
 import 'package:fitness_master/core/utils/app_router.dart';
 import 'package:fitness_master/core/utils/app_styles.dart';
 
@@ -22,7 +22,9 @@ class PremiumRow extends StatelessWidget {
         const Spacer(),
         InkWell(
           onTap: () {
-            context.go(AppRouter.kBottomNavigationBar);
+            Get.offAllNamed(AppRouter.kBottomNavigationBar);
+
+            
           },
           child: const Icon(
             Icons.clear,
