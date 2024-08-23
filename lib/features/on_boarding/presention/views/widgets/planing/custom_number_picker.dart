@@ -1,31 +1,19 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:numberpicker/numberpicker.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class CustomNumberPicker extends StatefulWidget {
-  const CustomNumberPicker({
-    super.key,
-    required this.currentValue,
-    required this.maxValue,
-    required this.minValue,
-  });
+class CustomNumberPicker extends StatelessWidget {
+  const CustomNumberPicker(
+      {super.key,
+      required this.maxValue,
+      required this.minValue,
+      required this.onValueChanged,
+      required this.currentValue});
 
-  final int currentValue;
   final int maxValue;
   final int minValue;
-
-  @override
-  State<CustomNumberPicker> createState() => _CustomNumberPickerState();
-}
-
-class _CustomNumberPickerState extends State<CustomNumberPicker> {
-  late int _currentValue;
-
-  @override
-  void initState() {
-    super.initState();
-    _currentValue = widget.currentValue;
-  }
+  final int currentValue;
+  final void Function(int value) onValueChanged;
 
   @override
   Widget build(BuildContext context) {
@@ -56,15 +44,13 @@ class _CustomNumberPickerState extends State<CustomNumberPicker> {
       mainAxisAlignment: MainAxisAlignment.center,
       children: <Widget>[
         NumberPicker(
-          selectedTextStyle: const TextStyle(color: Colors.white, fontSize: 24),
-          textStyle: const TextStyle(color: Colors.white),
-          value: _currentValue,
-          minValue: widget.minValue,
-          maxValue: widget.maxValue,
-          onChanged: (value) => setState(
-            () => _currentValue = value,
-          ),
-        ),
+            selectedTextStyle:
+                const TextStyle(color: Colors.white, fontSize: 24),
+            textStyle: const TextStyle(color: Colors.white),
+            value: currentValue,
+            minValue: minValue,
+            maxValue: maxValue,
+            onChanged:onValueChanged),
       ],
     );
   }

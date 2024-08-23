@@ -20,4 +20,11 @@ class SharedPref {
   static getString (String key)  {
     return _instance.getString(key) ??"";
 }
+  static setInt (String key, int value)  {
+    _instance.setInt(key, value);
+  }
+
+  static getInt (String key)  {
+    return _instance.getInt(key) ??-1;
+}
 }

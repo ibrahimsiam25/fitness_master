@@ -34,21 +34,8 @@ class PlanningViewBody extends StatelessWidget {
           SizedBox(height: 12.h),
           const CustomRowGoal(),
           const Spacer(),
-          const CustomRowForMinAndDay(
-            text: "How many days a week\ndo you plan to exercise?",
-            title: "day",
-            currentValue: 3,
-            maxValue: 7,
-            minValue: 1,
-          ),
-          const Spacer(),
-          const CustomRowForMinAndDay(
-            text: "How much time will you\ncover exercise?",
-            title: "min",
-            currentValue: 20,
-            maxValue: 200,
-            minValue: 15,
-          ),
+     CustomWidgetForMinAndDay(),
+     
           const Spacer(),
           CustomButton(
             onTap: () {
