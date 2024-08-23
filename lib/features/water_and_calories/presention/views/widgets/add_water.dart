@@ -1,4 +1,6 @@
+import 'package:fitness_master/features/water_and_calories/presention/manager/water_meal_controller.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get_state_manager/src/simple/get_state.dart';
 import 'water_intake.dart';
 import '../../../../../core/utils/app_styles.dart';
 import '../../../../../core/constants/app_color.dart';
@@ -66,11 +68,17 @@ class CustomWaterContianer extends StatelessWidget {
           SizedBox(
             height: 35.h,
           ),
-          MainButton(
-            color: AppColor.theme,
-            text: "Save",
-            textColor: AppColor.black,
-            onTap: onTap,
+          GetBuilder<WaterMealController>(
+            builder: (controller) {
+              return MainButton(
+                color: AppColor.theme,
+                text: "Save",
+                textColor: AppColor.black,
+                onTap: () {
+                  controller.defaultView();
+                },
+              );
+            },
           ),
         ],
       ),

@@ -1,10 +1,10 @@
 import 'package:fitness_master/core/constants/app_color.dart';
 import 'package:fitness_master/core/constants/const.dart';
 import 'package:fitness_master/core/widgets/main_button.dart';
-import 'package:fitness_master/features/exercises/presentation/manager/exercises/exercises_cubit.dart';
+import 'package:fitness_master/features/exercises/presentation/manager/exercises_controller.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 
 class ExercisesTapbar extends StatefulWidget {
   const ExercisesTapbar({super.key});
@@ -16,8 +16,9 @@ class ExercisesTapbar extends StatefulWidget {
 class _ExercisesTapbarState extends State<ExercisesTapbar> {
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<ExercisesCubit, int>(
-      builder: (context, state) {
+    Get.put(ExercisesController());
+    return GetBuilder<ExercisesController>(
+      builder: (controller) {
         return Padding(
           padding: EdgeInsets.only(left: 16.0.w),
           child: Wrap(
@@ -35,14 +36,15 @@ class _ExercisesTapbarState extends State<ExercisesTapbar> {
                       child: MainButton(
                         onTap: () {
                           setState(() {
-                            context.read<ExercisesCubit>().changeIndex(index);
+                            controller.changeIndex(index);
                           });
                         },
-                        color: state == index
+                        color: controller.currentIndex == index
                             ? AppColor.theme
                             : AppColor.veryDarkGray,
-                        textColor:
-                            state == index ? AppColor.black : AppColor.white,
+                        textColor: controller.currentIndex == index
+                            ? AppColor.black
+                            : AppColor.white,
                         text: exercises['title'][index],
                       ),
                     ),
