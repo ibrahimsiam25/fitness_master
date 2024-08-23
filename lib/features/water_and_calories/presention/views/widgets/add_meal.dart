@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import '../../../../../../core/utils/app_styles.dart';
-import '../../../../../../core/constants/app_color.dart';
+import '../../../../../core/utils/app_styles.dart';
+import '../../../../../core/constants/app_color.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:fitness_master/core/widgets/main_button.dart';
-import 'package:fitness_master/features/water_and_calories/presention/views/widgets/add_meal/custom_text_and_contianer.dart';
+import 'package:fitness_master/features/water_and_calories/presention/views/widgets/custom_text_and_contianer.dart';
 
 class AddMeal extends StatelessWidget {
   final void Function()? onTap;

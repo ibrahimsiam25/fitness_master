@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import '../water_and_calorirs/water_intake.dart';
-import '../../../../../../core/utils/app_styles.dart';
-import '../../../../../../core/constants/app_color.dart';
+import 'water_intake.dart';
+import '../../../../../core/utils/app_styles.dart';
+import '../../../../../core/constants/app_color.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:fitness_master/core/widgets/main_button.dart';
-import 'package:fitness_master/features/water_and_calories/presention/views/widgets/water_and_calorirs/custom_row_meal_and_water.dart';
+import 'package:fitness_master/features/water_and_calories/presention/views/widgets/custom_row_meal_and_water.dart';
 
 class AddWater extends StatelessWidget {
   final void Function()? onTap;

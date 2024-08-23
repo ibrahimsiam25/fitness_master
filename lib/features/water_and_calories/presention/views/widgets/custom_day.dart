@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:fitness_master/core/constants/app_color.dart';
 import 'package:fitness_master/features/water_and_calories/presention/views/widgets/custom_date_time.dart';
-import 'package:fitness_master/features/water_and_calories/presention/views/widgets/water_and_calorirs/water_intake.dart';
-import 'package:fitness_master/features/water_and_calories/presention/views/widgets/water_and_calorirs/custom_meal_data.dart';
+import 'package:fitness_master/features/water_and_calories/presention/views/widgets/water_intake.dart';
+import 'package:fitness_master/features/water_and_calories/presention/views/widgets/custom_meal_data.dart';
 
 class CustomDay extends StatelessWidget {
   const CustomDay({
@@ -33,7 +33,9 @@ class CustomDay extends StatelessWidget {
             cross: CrossAxisAlignment.start,
           ),
           SizedBox(height: 24.0.h),
-          const WaterIntake(title:  'Water iintake',)
+          const WaterIntake(
+            title: 'Water iintake',
+          )
         ],
       ),
     );
