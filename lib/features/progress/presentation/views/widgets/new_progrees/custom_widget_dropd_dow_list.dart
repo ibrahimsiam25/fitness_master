@@ -2,8 +2,7 @@ import 'package:get/get.dart';
 import 'package:flutter/widgets.dart';
 import '../../../../../../core/utils/app_styles.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import '../../../manager/dropd_down_month_list_controller.dart';
-import 'package:fitness_master/features/progress/presentation/manager/dropd_down_category_list_controller.dart';
+import 'package:fitness_master/features/progress/presentation/manager/new_progress_controller.dart';
 import 'package:fitness_master/features/progress/presentation/views/widgets/new_progrees/custom_dropd_down_list.dart';
 
 
@@ -24,13 +23,13 @@ class CustomWidgetDropDownList extends StatelessWidget {
           SizedBox(
             height: 12.h,
           ),
-        GetBuilder<DropdDownCategoryListController>(builder: (controller) {
+        GetBuilder<NewProgressController>(builder: (controller) {
           return CustomDropDownList(
               list: controller.muscles,
               onValueChanged: (value) {
-                controller.onValueChanged(value);
+                controller.onValueChangedCategory(value);
               },
-              currentValue: controller.currentValue);
+              currentValue: controller.currentValueOfCategory);
         }),
             SizedBox(
             height: 24.h,
@@ -44,13 +43,13 @@ class CustomWidgetDropDownList extends StatelessWidget {
           SizedBox(
             height: 12.h,
           ),
-        GetBuilder<DropDownMonthListController>(builder: (controller) {
+        GetBuilder<NewProgressController>(builder: (controller) {
           return CustomDropDownList(
               list: controller.months,
               onValueChanged: (value) {
-                controller.onValueChanged(value);
+                controller.onValueChangedMonth(value);
               },
-              currentValue: controller.currentValue);
+              currentValue: controller.currentValueOfMonth);
         }),
       ],
     );

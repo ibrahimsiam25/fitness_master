@@ -1,6 +1,8 @@
+import 'dart:io';
 import 'package:flutter/material.dart';
 import '../../../../../../core/utils/app_styles.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 
 class CustomColumnForProgress extends StatelessWidget {
   const CustomColumnForProgress({
@@ -17,12 +19,15 @@ class CustomColumnForProgress extends StatelessWidget {
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        Image.asset(
-          width: 109.w,
-          height: 185.0.h,
-          imagePath,
-          fit: BoxFit.fill,
-        ),
+      ClipRRect(
+                  borderRadius: BorderRadius.circular(40.0.r),
+                  child: Image.file(
+                    width: 110.w,
+                    height: 180.h,
+                    File(imagePath),
+                    fit: BoxFit.cover, // Adjust fit as needed
+                  ),
+                ),
         SizedBox(height: 16.h),
         Text(title, style: AppStyles.body1),
       ],

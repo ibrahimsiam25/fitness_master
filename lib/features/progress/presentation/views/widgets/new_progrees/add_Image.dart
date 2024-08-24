@@ -1,10 +1,10 @@
 import 'package:get/get.dart';
 import 'package:flutter/material.dart';
 import 'package:svg_flutter/svg_flutter.dart';
-import '../../../manager/add_image_controller.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:fitness_master/core/constants/app_color.dart';
 import 'package:fitness_master/core/constants/app_assets.dart';
+import 'package:fitness_master/features/progress/presentation/manager/new_progress_controller.dart';
 
 class AddImage extends StatelessWidget {
   const AddImage({
@@ -13,10 +13,10 @@ class AddImage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GetBuilder<AddImageController>(
+    return GetBuilder<NewProgressController>(
       builder: (controller) {
         return GestureDetector(
-          onTap: () => controller.uploadImage(),
+          onTap: () => controller.showImagePickerOptions(),
           child: controller.image == null
               ? Container(
                   width: 140.w,

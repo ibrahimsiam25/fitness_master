@@ -3,6 +3,7 @@ import '../../features/splash/presention/views/splash_view.dart';
 import '../../features/settings/presentation/views/settings_view.dart';
 import '../../features/progress/presentation/views/new_progrees_view.dart';
 import 'package:fitness_master/features/home/presentation/views/home_view.dart';
+import 'package:fitness_master/features/progress/presentation/views/progress_view.dart';
 import 'package:fitness_master/features/on_boarding/presention/views/planning_view.dart';
 import 'package:fitness_master/features/exercises/presentation/views/exercises_view.dart';
 import 'package:fitness_master/features/on_boarding/presention/views/on_boarding_view.dart';
@@ -23,6 +24,7 @@ abstract class AppRouter {
   static const kExercisesView = '/exercisesView';
   static const kExercisesDetails = '/exercisesDetails';
   static const kWaterAndCalories = '/waterAndCalories';
+  static const kProgreesView = '/progreesView';
   static const kNewProgrees = '/newProgrees';
   static const kSettings = '/settings';
   static const kBottomNavigationBar = '/bottomNavigationBar';
@@ -59,6 +61,10 @@ abstract class AppRouter {
     GetPage(
       name: kWaterAndCalories,
       page: () => const WaterAndCaloriesView(),
+    ),
+       GetPage(
+      name:   kProgreesView,
+      page: () => const ProgressView(),
     ),
     GetPage(
       name:   kNewProgrees,
