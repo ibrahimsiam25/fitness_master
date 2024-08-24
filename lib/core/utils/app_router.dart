@@ -14,7 +14,7 @@ import 'package:fitness_master/features/water_and_calories/presention/views/wate
 
 
 
- class AppRouter {
+abstract class AppRouter {
   static const String kSplashView = '/splashView';
   static const kOnBoardingView = '/onBoardingView';
   static const kPlanningView = '/planningView';

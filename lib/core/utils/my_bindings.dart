@@ -5,6 +5,8 @@ import '../../features/on_boarding/presention/manager/number_picker_days_control
 import 'package:fitness_master/features/on_boarding/presention/manager/on_boarding_controller.dart';
 import 'package:fitness_master/features/on_boarding/presention/manager/planning_goal_controller.dart';
 import 'package:fitness_master/features/on_boarding/presention/manager/number_picker_mins_controller.dart';
+import 'package:fitness_master/features/progress/presentation/manager/dropd_down_month_list_controller.dart';
+import 'package:fitness_master/features/progress/presentation/manager/dropd_down_category_list_controller.dart';
 
 class MyBindings implements Bindings {
   
@@ -16,5 +18,7 @@ class MyBindings implements Bindings {
     Get.lazyPut(() => PlanningGoalController(), fenix: true);
     Get.lazyPut(() => NumberPickerMinsController(), fenix: true);
     Get.lazyPut(() => NumberPickerDaysController(), fenix: true);
+    Get.lazyPut(() => DropDownMonthListController(), fenix: true);
+    Get.lazyPut(() => DropdDownCategoryListController(), fenix: true);
   }
 }

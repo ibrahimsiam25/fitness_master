@@ -4,24 +4,15 @@ import '../../../../../../core/utils/app_styles.dart';
 import '../../../../../../core/constants/app_color.dart';
 import '../../../../../../core/constants/app_assets.dart';
 
-class CustomDropdownList extends StatefulWidget {
+class CustomDropDownList extends StatelessWidget {
+  const CustomDropDownList(
+      {super.key,
+      required this.list,
+      required this.onValueChanged,
+      required this.currentValue});
   final List<String> list;
-
-  const CustomDropdownList({super.key, required this.list});
-
-  @override
-  CustomDropdownListState createState() => CustomDropdownListState();
-}
-
-class CustomDropdownListState extends State<CustomDropdownList> {
-  String? selectedMuscle;
-
-  @override
-  void initState() {
-    super.initState();
-    selectedMuscle = widget.list[0]; // Default to the first item
-  }
-
+  final void Function(String? value) onValueChanged;
+  final String currentValue;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -32,19 +23,15 @@ class CustomDropdownListState extends State<CustomDropdownList> {
         borderRadius: BorderRadius.circular(10.0), // Rounded corners
       ),
       child: DropdownButton<String>(
-        value: selectedMuscle,
+        value: currentValue,
         icon: SvgPicture.asset(AppAssets.arrowDown),
         iconSize: 24,
         underline: const SizedBox(), // Remove the underline
-        onChanged: (String? newValue) {
-          setState(() {
-            selectedMuscle = newValue!;
-          });
-        },
+        onChanged: onValueChanged,
         dropdownColor: AppColor.veryDarkGray, // Dropdown background color
         isExpanded: true, // Ensures the Row takes up the full width
         selectedItemBuilder: (BuildContext context) {
-          return widget.list.map<Widget>((String value) {
+          return list.map<Widget>((String value) {
             return Row(
               children: [
                 Text(
@@ -56,7 +43,7 @@ class CustomDropdownListState extends State<CustomDropdownList> {
             );
           }).toList();
         },
-        items: widget.list.map<DropdownMenuItem<String>>((String value) {
+        items: list.map<DropdownMenuItem<String>>((String value) {
           return DropdownMenuItem<String>(
             value: value,
             child: Text(
@@ -67,5 +54,6 @@ class CustomDropdownListState extends State<CustomDropdownList> {
         }).toList(),
       ),
     );
+    
   }
 }

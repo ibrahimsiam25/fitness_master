@@ -5,33 +5,8 @@ import '../../../../../../core/utils/app_styles.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:fitness_master/core/constants/app_color.dart';
 import 'package:fitness_master/core/constants/app_assets.dart';
-import 'package:fitness_master/features/progress/presentation/views/widgets/new_progrees/custom_dropd_down_list.dart';
+import 'package:fitness_master/features/progress/presentation/views/widgets/new_progrees/custom_widget_dropd_dow_list.dart';
 
-
-final List<String> muscles = [
-  'Biceps',
-  'Triceps',
-  'Chest',
-  'Back',
-  'Legs',
-  'Shoulders',
-  'Abs',
-];
-
-final List<String> months = [
-  'January',
-  'February',
-  'March',
-  'April',
-  'May',
-  'June',
-  'July',
-  'August',
-  'September',
-  'October',
-  'November',
-  'December',
-];
 
 class NewProgreesViewBody extends StatelessWidget {
   const NewProgreesViewBody({super.key});
@@ -89,33 +64,9 @@ class NewProgreesViewBody extends StatelessWidget {
           SizedBox(
             height: 24.h,
           ),
-          Align(
-              alignment: Alignment.centerLeft,
-              child: Text(
-                "Category",
-                style: AppStyles.body1,
-              )),
-          SizedBox(
-            height: 12.h,
-          ),
-          CustomDropdownList(
-            list: muscles,
-          ),
-          SizedBox(
-            height: 24.h,
-          ),
-          Align(
-              alignment: Alignment.centerLeft,
-              child: Text(
-                "Month",
-                style: AppStyles.body1,
-              )),
-          SizedBox(
-            height: 12.h,
-          ),
-          CustomDropdownList(
-            list: months,
-          )
+       
+      CustomWidgetDropDownList(),
+        // CustomDropDownList(noOfList: 1),
         ],
       ),
     ));
