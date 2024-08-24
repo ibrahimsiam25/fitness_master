@@ -54,6 +54,5 @@ class CustomDropDownList extends StatelessWidget {
         }).toList(),
       ),
     );
-    
   }
 }
