@@ -1,8 +1,8 @@
-import 'package:fitness_master/features/water_and_calories/presention/manager/water_meal_controller.dart';
-import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:flutter/material.dart';
 import 'package:svg_flutter/svg_flutter.dart';
 import '../../../../../core/constants/app_assets.dart';
+import 'package:fitness_master/features/water_and_calories/presention/manager/water_meal_controller.dart';
 import 'package:fitness_master/features/water_and_calories/presention/views/widgets/custom_meal_and_water_item.dart';
 
 class CustomRowMealAndWater extends StatefulWidget {
@@ -20,7 +20,7 @@ class _CustomRowMealAndWaterState extends State<CustomRowMealAndWater> {
 
   @override
   Widget build(BuildContext context) {
-    Get.put(WaterMealController());
+   
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: List.generate(

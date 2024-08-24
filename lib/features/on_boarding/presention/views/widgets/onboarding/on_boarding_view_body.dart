@@ -8,7 +8,7 @@ class OnBoardingViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final controller = Get.find<OnBoardingController>(); // Access the controller
+    final controller = Get.find<OnBoardingController>(); 
 
     return PageView.builder(
       physics: const NeverScrollableScrollPhysics(),

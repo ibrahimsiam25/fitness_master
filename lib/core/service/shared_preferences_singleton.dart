@@ -1,4 +1,6 @@
+import 'dart:io';
 import 'package:shared_preferences/shared_preferences.dart';
+
 
 class SharedPref {
   static late SharedPreferences _instance;
@@ -27,4 +29,6 @@ class SharedPref {
   static getInt (String key)  {
     return _instance.getInt(key) ??-1;
 }
+
+  
 }

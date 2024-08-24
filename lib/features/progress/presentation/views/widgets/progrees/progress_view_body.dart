@@ -14,12 +14,7 @@ final Map<String, Map<String, String>> progressMap = {
     "June": AppAssets.progress,
     "August": AppAssets.progress,
   },
-  "Abdomen": {
-    "April": AppAssets.progress,
-    "May": AppAssets.progress,
-    "June": AppAssets.progress,
-    "August": AppAssets.progress,
-  },
+
 };
 
 class ProgressViewBody extends StatelessWidget {

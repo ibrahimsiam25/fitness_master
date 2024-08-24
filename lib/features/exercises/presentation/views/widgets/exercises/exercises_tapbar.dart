@@ -1,10 +1,10 @@
-import 'package:fitness_master/core/constants/app_color.dart';
+import 'package:get/get.dart';
+import 'package:flutter/material.dart';
 import 'package:fitness_master/core/constants/const.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:fitness_master/core/constants/app_color.dart';
 import 'package:fitness_master/core/widgets/main_button.dart';
 import 'package:fitness_master/features/exercises/presentation/manager/exercises_controller.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:get/get.dart';
 
 class ExercisesTapbar extends StatefulWidget {
   const ExercisesTapbar({super.key});
@@ -16,7 +16,7 @@ class ExercisesTapbar extends StatefulWidget {
 class _ExercisesTapbarState extends State<ExercisesTapbar> {
   @override
   Widget build(BuildContext context) {
-    Get.put(ExercisesController());
+  
     return GetBuilder<ExercisesController>(
       builder: (controller) {
         return Padding(
