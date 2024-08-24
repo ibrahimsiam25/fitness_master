@@ -7,6 +7,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:fitness_master/features/on_boarding/presention/views/widgets/planing/custom_row_goal.dart';
 import 'package:fitness_master/features/on_boarding/presention/views/widgets/onboarding/custom_button.dart';
 import 'package:fitness_master/features/on_boarding/presention/views/widgets/planing/custom_row_for_min_and_day.dart';
+
 class PlanningViewBody extends StatelessWidget {
   const PlanningViewBody({super.key});
 
@@ -34,13 +35,11 @@ class PlanningViewBody extends StatelessWidget {
           SizedBox(height: 12.h),
           const CustomRowGoal(),
           const Spacer(),
-     CustomWidgetForMinAndDay(),
-     
+          const CustomWidgetForMinAndDay(),
           const Spacer(),
           CustomButton(
             onTap: () {
               Get.toNamed(AppRouter.kLimitedFunctionality);
-              
             },
           ),
           const Spacer(),

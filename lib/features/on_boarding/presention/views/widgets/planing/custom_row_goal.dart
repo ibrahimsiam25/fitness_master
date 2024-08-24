@@ -4,7 +4,7 @@ import '../../../manager/planning_goal_controller.dart';
 import 'package:fitness_master/features/on_boarding/presention/views/widgets/planing/planning_goal_item.dart';
 
 class CustomRowGoal extends StatelessWidget {
-  const CustomRowGoal({Key? key}) : super(key: key);
+  const CustomRowGoal({super.key});
 
   @override
   Widget build(BuildContext context) {
