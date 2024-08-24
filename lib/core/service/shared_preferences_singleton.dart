@@ -1,6 +1,4 @@
-import 'dart:io';
 import 'package:shared_preferences/shared_preferences.dart';
-
 
 class SharedPref {
   static late SharedPreferences _instance;
@@ -8,27 +6,28 @@ class SharedPref {
   static Future<void> init() async {
     _instance = await SharedPreferences.getInstance();
   }
-  static setBool (String key, bool value)  {
+
+  static setBool(String key, bool value) {
     _instance.setBool(key, value);
   }
 
-  static getBool (String key)  {
-    return _instance.getBool(key) ??false;
-}
-  static setString (String key, String value)  {
+  static getBool(String key) {
+    return _instance.getBool(key) ?? false;
+  }
+
+  static setString(String key, String value) {
     _instance.setString(key, value);
   }
 
-  static getString (String key)  {
-    return _instance.getString(key) ??"";
-}
-  static setInt (String key, int value)  {
+  static getString(String key) {
+    return _instance.getString(key) ?? "";
+  }
+
+  static setInt(String key, int value) {
     _instance.setInt(key, value);
   }
 
-  static getInt (String key)  {
-    return _instance.getInt(key) ??-1;
-}
-
-  
+  static getInt(String key) {
+    return _instance.getInt(key) ?? -1;
+  }
 }

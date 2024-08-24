@@ -10,7 +10,7 @@ class SplashViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final SplashController controller = Get.find<SplashController>();
+    Get.find<SplashController>();
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [

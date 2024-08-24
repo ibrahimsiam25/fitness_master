@@ -1,16 +1,13 @@
 import 'package:get/get.dart';
 import 'package:flutter/material.dart';
-import '../../../manager/progress_controller.dart';
 import '../../../../../../core/utils/app_router.dart';
 import '../../../../../../core/utils/app_styles.dart';
 import '../../../manager/new_progress_controller.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:fitness_master/core/widgets/main_button.dart';
 import 'package:fitness_master/core/constants/app_color.dart';
-import 'package:fitness_master/features/progress/presentation/views/widgets/new_progrees/add_Image.dart';
+import 'package:fitness_master/features/progress/presentation/views/widgets/new_progrees/add_image.dart';
 import 'package:fitness_master/features/progress/presentation/views/widgets/new_progrees/custom_widget_dropd_dow_list.dart';
-
-
 
 class NewProgreesViewBody extends StatelessWidget {
   const NewProgreesViewBody({super.key});
@@ -45,22 +42,22 @@ class NewProgreesViewBody extends StatelessWidget {
           SizedBox(
             height: 24.h,
           ),
-         const AddImage(),
+          const AddImage(),
           SizedBox(
             height: 24.h,
           ),
           const CustomWidgetDropDownList(),
-         const Spacer(),
+          const Spacer(),
           MainButton(
               onTap: () {
                 final controller = Get.find<NewProgressController>();
-              
-               
+
                 controller.updateProgressMap();
-               
               },
-            color: AppColor.theme, text: "Save", textColor: AppColor.black),
-         const Spacer(),
+              color: AppColor.theme,
+              text: "Save",
+              textColor: AppColor.black),
+          const Spacer(),
         ],
       ),
     ));

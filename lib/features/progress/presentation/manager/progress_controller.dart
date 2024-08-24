@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../../../../core/service/shared_preferences_singleton.dart';
 
@@ -11,7 +12,6 @@ class ProgressController extends GetxController {
 
     fetchData();
   }
- 
 
   void fetchData() {
     // Retrieve the progress map JSON from SharedPreferences
@@ -27,7 +27,7 @@ class ProgressController extends GetxController {
           );
         }
       } catch (e) {
-        print("Error decoding progressMapJson: $e");
+        debugPrint("Error decoding progressMapJson: $e");
       }
     }
   }

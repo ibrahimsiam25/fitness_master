@@ -7,16 +7,12 @@ import 'package:fitness_master/core/constants/app_assets.dart';
 import 'package:fitness_master/core/widgets/custom_app_bar.dart';
 import 'package:fitness_master/features/progress/presentation/views/widgets/progrees/progress_category_card.dart';
 
-
-
-
-
 class ProgressViewBody extends StatelessWidget {
   const ProgressViewBody({super.key});
 
   @override
   Widget build(BuildContext context) {
-     final controller = Get.find<ProgressController>();
+    final controller = Get.find<ProgressController>();
     return SafeArea(
       child: Padding(
         padding: EdgeInsets.symmetric(horizontal: 16.w),
@@ -26,7 +22,7 @@ class ProgressViewBody extends StatelessWidget {
               title: "Progress",
               icon: AppAssets.pluse,
               onPressed: () {
-                 Get.offAllNamed(AppRouter.kNewProgrees);
+                Get.toNamed(AppRouter.kNewProgrees);
               },
             ),
             ...List.generate(
