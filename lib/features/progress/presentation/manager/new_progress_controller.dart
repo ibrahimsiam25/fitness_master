@@ -9,8 +9,6 @@ import 'package:fitness_master/core/widgets/custom_snack_bar.dart';
 import 'package:fitness_master/core/service/shared_preferences_singleton.dart';
 import 'package:fitness_master/features/progress/presentation/manager/progress_controller.dart';
 
-
-
 class NewProgressController extends GetxController {
   String currentValueOfMonth = "January";
   String currentValueOfCategory = 'Biceps';
@@ -59,7 +57,8 @@ class NewProgressController extends GetxController {
       update();
     }
   }
-    Future<void> uploadImageFromCamera() async {
+
+  Future<void> uploadImageFromCamera() async {
     final pickedImage =
         await _imagePicker.pickImage(source: ImageSource.camera);
     if (pickedImage != null) {
@@ -70,12 +69,14 @@ class NewProgressController extends GetxController {
 
   Future<void> updateProgressMap() async {
     if (image == null || image!.path.isEmpty) {
-     customSnackbar(title: "Error", message: "Please upload an image");
+      customSnackbar(
+        title: "Error",
+        message: "Please upload an image",
+      );
     } else {
       final String? progressMapJson = SharedPref.getString('progressMap');
       Map<String, Map<String, String>> progressMap = {};
 
-      
       if (progressMapJson != null && progressMapJson.isNotEmpty) {
         try {
           final decodedMap = jsonDecode(progressMapJson);
@@ -86,7 +87,7 @@ class NewProgressController extends GetxController {
             );
           }
         } catch (e) {
-          print("Error decoding progressMapJson: $e");
+          debugPrint("Error decoding progressMapJson: $e");
         }
       }
 
@@ -103,31 +104,41 @@ class NewProgressController extends GetxController {
         controller.fetchData();
 
       } catch (e) {
-        print("Error saving progressMap: $e");
+        debugPrint("Error saving progressMap: $e");
       }
-
     }
   }
 
-
-void showImagePickerOptions() {
+  void showImagePickerOptions() {
     Get.bottomSheet(
       Container(
         color: AppColor.background,
-        padding: EdgeInsets.all(16.0),
+        padding: const EdgeInsets.all(16.0),
         child: Wrap(
           children: [
             ListTile(
-              leading: Icon(Icons.photo_library,color: AppColor.white,),
-              title: Text('Open Gallery',style: AppStyles.body4,),
+              leading: const Icon(
+                Icons.photo_library,
+                color: AppColor.white,
+              ),
+              title: Text(
+                'Open Gallery',
+                style: AppStyles.body4,
+              ),
               onTap: () {
                 uploadImageFromGallery();
                 Get.back(); // Close the bottom sheet
               },
             ),
             ListTile(
-              leading: Icon(Icons.camera_alt,color: AppColor.white,),
-              title: Text('Open Camera',style: AppStyles.body4,),
+              leading: const Icon(
+                Icons.camera_alt,
+                color: AppColor.white,
+              ),
+              title: Text(
+                'Open Camera',
+                style: AppStyles.body4,
+              ),
               onTap: () {
                 uploadImageFromCamera();
                 Get.back(); // Close the bottom sheet
@@ -138,5 +149,4 @@ void showImagePickerOptions() {
       ),
     );
   }
-
 }

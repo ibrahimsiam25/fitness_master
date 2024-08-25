@@ -1,5 +1,6 @@
 import 'dart:convert';
 import 'package:get/get.dart';
+import 'package:flutter/material.dart';
 import '../../../../core/constants/const.dart';
 import '../../../../core/service/shared_preferences_singleton.dart';
 
@@ -20,7 +21,7 @@ class ProgressController extends GetxController {
           update();
         }
       } catch (e) {
-        print("Error decoding progressMapJson: $e");
+        debugPrint("Error decoding progressMapJson: $e");
       }
     }
   }
