@@ -1,5 +1,7 @@
 import 'dart:io';
 import 'dart:convert';
+import 'package:fitness_master/core/utils/app_router.dart';
+import 'package:fitness_master/features/home/presentation/views/widgets/bottom_nav_bar.dart';
 import 'package:get/get.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
@@ -100,13 +102,16 @@ class NewProgressController extends GetxController {
       // Save the updated map back to SharedPreferences
       try {
         await SharedPref.setString('progressMap', jsonEncode(progressMap));
-        customSnackbar(title: "Success", message: "Progress saved successfully");
-      controller.fetchData();
-     
+        customSnackbar(
+            title: "Success", message: "Progress saved successfully");
+        controller.fetchData();
+        selectedIndex = 2;
+        Get.offAllNamed(
+          AppRouter.kBottomNavigationBar,
+        );
       } catch (e) {
         debugPrint("Error saving progressMap: $e");
       }
-         
     }
   }
 

@@ -19,20 +19,21 @@ class BottomNavigationBarController extends StatefulWidget {
       _BottomNavigationBarControllerState();
 }
 
+int selectedIndex = 0;
+
 class _BottomNavigationBarControllerState
     extends State<BottomNavigationBarController> {
   late PersistentTabController _controller;
-  int _selectedIndex = 0;
 
   @override
   void initState() {
     super.initState();
-    _controller = PersistentTabController(initialIndex: 0);
+    _controller = PersistentTabController(initialIndex: selectedIndex);
   }
 
   @override
   void dispose() {
-    _controller = PersistentTabController(initialIndex: 0);
+    _controller = PersistentTabController(initialIndex: selectedIndex);
     super.dispose();
   }
 
@@ -49,7 +50,7 @@ class _BottomNavigationBarControllerState
   List<PersistentBottomNavBarItem> navBarsItems() {
     return [
       PersistentBottomNavBarItem(
-        icon: _selectedIndex == 0
+        icon: selectedIndex == 0
             ? const CustomSelectedIcon(
                 asset: AppAssets.home,
               )
@@ -58,28 +59,28 @@ class _BottomNavigationBarControllerState
               ),
       ),
       PersistentBottomNavBarItem(
-        icon: _selectedIndex == 1
+        icon: selectedIndex == 1
             ? const CustomSelectedIcon(
                 asset: AppAssets.exercise,
               )
             : SvgPicture.asset(AppAssets.exercise),
       ),
       PersistentBottomNavBarItem(
-        icon: _selectedIndex == 2
+        icon: selectedIndex == 2
             ? const CustomSelectedIcon(
                 asset: AppAssets.elements,
               )
             : SvgPicture.asset(AppAssets.elements),
       ),
       PersistentBottomNavBarItem(
-        icon: _selectedIndex == 3
+        icon: selectedIndex == 3
             ? const CustomSelectedIcon(
                 asset: AppAssets.chart,
               )
             : SvgPicture.asset(AppAssets.chart),
       ),
       PersistentBottomNavBarItem(
-        icon: _selectedIndex == 4
+        icon: selectedIndex == 4
             ? const CustomSelectedIcon(
                 asset: AppAssets.settings,
               )
@@ -106,7 +107,7 @@ class _BottomNavigationBarControllerState
       items: navBarsItems(),
       onItemSelected: (index) {
         setState(() {
-          _selectedIndex = index;
+          selectedIndex = index;
         });
       },
     );

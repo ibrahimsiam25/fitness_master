@@ -52,7 +52,6 @@ class NewProgreesViewBody extends StatelessWidget {
             return MainButton(
               onTap: () {
                 controller.updateProgressMap();
-                Get.back();
               },
               color: AppColor.theme,
               text: "Save",
