@@ -1,6 +1,5 @@
 import 'package:get/get.dart';
 import 'package:flutter/material.dart';
-import '../../../../../../core/utils/app_router.dart';
 import '../../../../../../core/utils/app_styles.dart';
 import '../../../manager/new_progress_controller.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -53,7 +52,7 @@ class NewProgreesViewBody extends StatelessWidget {
                 final controller = Get.find<NewProgressController>();
 
                 controller.updateProgressMap();
-                Get.back();
+               
               },
               color: AppColor.theme,
               text: "Save",

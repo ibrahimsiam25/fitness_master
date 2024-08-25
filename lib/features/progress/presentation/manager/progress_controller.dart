@@ -7,8 +7,8 @@ import '../../../../core/service/shared_preferences_singleton.dart';
 class ProgressController extends GetxController {
  
 
-  void fetchData() {
-    final String? progressMapJson = SharedPref.getString('progressMap');
+  void fetchData() async {
+    final String? progressMapJson =await SharedPref.getString('progressMap');
 
     // Decode the JSON string if it's not empty and populate the progressMap
     if (progressMapJson?.isNotEmpty ?? false) {

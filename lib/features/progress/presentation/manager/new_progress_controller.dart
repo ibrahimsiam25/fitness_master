@@ -101,11 +101,12 @@ class NewProgressController extends GetxController {
       try {
         await SharedPref.setString('progressMap', jsonEncode(progressMap));
         customSnackbar(title: "Success", message: "Progress saved successfully");
-        controller.fetchData();
-
+      controller.fetchData();
+     
       } catch (e) {
         debugPrint("Error saving progressMap: $e");
       }
+         
     }
   }
 
