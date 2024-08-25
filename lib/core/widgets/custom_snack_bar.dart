@@ -1,5 +1,4 @@
 import 'package:fitness_master/core/constants/app_color.dart';
-import 'package:fitness_master/core/utils/app_styles.dart';
 import 'package:get/get.dart';
 
 void customSnackbar({

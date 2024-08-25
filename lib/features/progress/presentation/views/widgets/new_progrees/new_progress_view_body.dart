@@ -13,6 +13,7 @@ class NewProgreesViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    Get.find<NewProgressController>();
     return SafeArea(
         child: Padding(
       padding: EdgeInsets.symmetric(horizontal: 16.0.w),
@@ -47,16 +48,17 @@ class NewProgreesViewBody extends StatelessWidget {
           ),
           const CustomWidgetDropDownList(),
           const Spacer(),
-          MainButton(
+          GetBuilder<NewProgressController>(builder: (controller) {
+            return MainButton(
               onTap: () {
-                final controller = Get.find<NewProgressController>();
-
                 controller.updateProgressMap();
-               
+                Get.back();
               },
               color: AppColor.theme,
               text: "Save",
-              textColor: AppColor.black),
+              textColor: AppColor.black,
+            );
+          }),
           const Spacer(),
         ],
       ),

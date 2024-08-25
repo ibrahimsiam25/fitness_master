@@ -15,7 +15,7 @@ class ProgressViewBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Padding(
-        padding: EdgeInsets.only(left: 16.w, right: 16.w, bottom: 80.h),
+        padding: EdgeInsets.only(left: 16.w, right: 16.w),
         child: ListView(
           children: [
             CustomAppBar(
@@ -39,6 +39,7 @@ class ProgressViewBody extends StatelessWidget {
                 );
               },
             ),
+            SizedBox(height: 80.h),
           ],
         ),
       ),
