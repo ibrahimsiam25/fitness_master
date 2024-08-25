@@ -10,8 +10,6 @@ import 'package:fitness_master/core/constants/app_color.dart';
 import 'package:fitness_master/features/progress/presentation/views/widgets/new_progrees/add_Image.dart';
 import 'package:fitness_master/features/progress/presentation/views/widgets/new_progrees/custom_widget_dropd_dow_list.dart';
 
-
-
 class NewProgreesViewBody extends StatelessWidget {
   const NewProgreesViewBody({super.key});
 
@@ -26,7 +24,7 @@ class NewProgreesViewBody extends StatelessWidget {
             children: [
               IconButton(
                   onPressed: () {
-                    Get.offAllNamed(AppRouter.kProgreesView);
+                    Get.back();
                   },
                   icon: Icon(
                     size: 30.0.r,
@@ -45,22 +43,23 @@ class NewProgreesViewBody extends StatelessWidget {
           SizedBox(
             height: 24.h,
           ),
-         const AddImage(),
+          const AddImage(),
           SizedBox(
             height: 24.h,
           ),
           const CustomWidgetDropDownList(),
-         const Spacer(),
+          const Spacer(),
           MainButton(
               onTap: () {
                 final controller = Get.find<NewProgressController>();
-              
-               
+
                 controller.updateProgressMap();
-               
+                Get.back();
               },
-            color: AppColor.theme, text: "Save", textColor: AppColor.black),
-         const Spacer(),
+              color: AppColor.theme,
+              text: "Save",
+              textColor: AppColor.black),
+          const Spacer(),
         ],
       ),
     ));

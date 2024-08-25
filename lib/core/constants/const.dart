@@ -6,7 +6,7 @@ const String kNoOfDaysForPlanning = 'noOfDaysForPlanning';
 const String kNoOfMinsForPlanning = 'noOfMinsForPlanning';
 const double kHorizontalPadding = 16.0;
 const kVerticalPadding = 16;
-
+ Map<String, Map<String, String>> progressMap = {};
 List premiumList = [
   'access to all exercises and articles',
   'the ability to set a goal to exercise\nmore than 4 days a week',
